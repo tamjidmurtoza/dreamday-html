@@ -1,0 +1,58 @@
+.cs_newsletter_style_1 {
+    height: 425px;
+}
+
+.cs_newsletter_style_2 {
+    height: 425px;
+
+   .cs_form_style_1 {
+    input {
+        color: var(--secondary);
+        border-color: var(--secondary);
+        &::placeholder {
+            color: var(--secondary);
+            opacity: .5;
+        }
+    }
+   }
+}
+
+.cs_newsletter_flower {
+    position: absolute;
+    left: 50%;
+    bottom: -55px;
+    transform: translate(-50%);
+}
+
+.cs_form_style_1{
+    padding-top: 36px;
+
+    input {
+        width: 500px;
+        border: none;
+        border-bottom: 1px solid var(--primary);
+        background: transparent;
+        padding-bottom: 16px;
+        outline: none;
+
+        &::placeholder {
+            opacity: .5;
+        }
+    }
+     button {
+            margin-left: 24px;
+        }
+}
+
+
+@media (max-width: 400px) {
+    .cs_form_style_1 {
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        button {
+            margin-left : 0;
+        }
+    }
+}

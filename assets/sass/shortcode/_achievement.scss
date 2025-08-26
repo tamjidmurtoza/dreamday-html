@@ -1,0 +1,73 @@
+.cs_achievement_section {
+    position: relative;
+
+    &::after {
+        content:  '';
+        position: absolute;
+        display: block;
+        background-color: var(--gray-color);
+        width: 70%;
+        height: 617px;
+        top: 0;
+    }
+}
+.cs_achievement_left {
+    position: relative;
+    z-index: 2;
+    img {
+        margin-bottom: 24px;
+    }
+    .cs_achievement_details {
+        padding-left: 160px;
+        
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            border-top: 1px solid var(--primary);
+            padding: 16px 0;
+
+            p {
+                font-size: 16px;
+            }
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+.cs_achievement_right {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+
+    img {
+        height: 100%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .cs_achievement_left {
+        .cs_achievement_details {
+            padding-left: 100px; 
+        }
+    }
+}
+@media (max-width: 991px) {
+    .cs_achievement_section {
+        &::after {
+            display: none;
+        }
+    }
+    .cs_achievement_left {
+        .cs_achievement_details {
+            padding: 0px 20px; 
+        }
+    }
+    .cs_achievement_right {
+        img {
+            width: 100%;
+        }
+    }
+}

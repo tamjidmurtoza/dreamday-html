@@ -1,0 +1,47 @@
+
+.cs_package_details {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+
+    .cs_total_price {
+        .cs_section_title {
+            padding-bottom: 16px;
+        }
+        .cs_btn {
+            margin-top: 28px;
+        }
+    }
+
+    .cs_package_details_icon {
+    width: 152px;
+    height: 152px;
+    background-color: var(--gray-color);
+    border-radius: 0 500px 0 0;
+}
+.cs_package_price {
+    
+    ul {
+        >li {
+        display: flex;
+        gap: 104px;
+        padding-bottom: 16px;
+        &:last-child{
+            padding-bottom: 0;
+            gap: 64px;
+        }
+        ol{
+            li:not(:last-child) {
+                padding-bottom: 8px;
+            }
+        }
+    }
+}
+}
+}
+@media (max-width: 991px) {
+    .cs_package_details {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}
