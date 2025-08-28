@@ -3,7 +3,7 @@
 
   /*
   |--------------------------------------------------------------------------
-  | Template Name: Dream Day
+  | Template Name: DreamDay
   | Author: Laralink
   | Version: 1.0.0
   |--------------------------------------------------------------------------
@@ -11,11 +11,18 @@
   | TABLE OF CONTENTS:
   |--------------------------------------------------------------------------
   |
-  | 
-  | 1. Mobile Menu
-  | 2. Sticky Header
-  | 3. Dynamic Background
-  
+  | 01. Preloader
+  | 02. Mobile Menu
+  | 03. Sticky Header
+  | 04. Dynamic Background
+  | 05. Swipper Slider
+  | 06. Video Modal
+  | 07. Accordian
+  | 08. Counter Animation
+  | 09. Light Gallery
+  | 10. Smooth Page Scroll
+  | 11. Dynamic contact form
+  | 12. AOS Animation
   |
   */
 
@@ -25,7 +32,9 @@
   $.exists = function (selector) {
     return $(selector).length > 0;
   };
-
+  $(window).on("load", function () {
+    preloader();
+  });
   $(window).on("scroll", function () {
     stickyHeader();
   });
@@ -34,25 +43,36 @@
     stickyHeader();
     mainNav();
     dynamicBackground();
-    //slickInit();
     swiperInit();
     modalVideo();
     accordian();
     counterInit();
     lightGallery();
+    smoothScroll();
+    aosInit();
+    if ($.exists(".cs_getting_year")) {
+      const date = new Date();
+      $(".cs_getting_year").text(date.getFullYear());
+    }
   });
   // Run on window resize
   $(window).on("resize", function () {
     const mobileWidth = 1199;
     if ($(window).width() >= mobileWidth) {
-      $(".cs_header_top,.cs_menu_toggle,.cs_nav_list_wrap").removeClass(
-        "active"
-      );
+      $(
+        ".cs_site_header_style_1,.cs_menu_toggle,.cs_nav_list_wrap"
+      ).removeClass("active");
     }
   });
-
+  /*=============================================================
+    01. Preloader
+  ===============================================================*/
+  function preloader() {
+    $(".cs_preloader_in").fadeOut();
+    $(".cs_preloader").delay(150).fadeOut("slow");
+  }
   /*--------------------------------------------------------------
-    1. Mobile Menu
+    02. Mobile Menu
   --------------------------------------------------------------*/
   function mainNav() {
     $(".cs_nav").append('<span class="cs_menu_toggle"><span></span></span>');
@@ -64,16 +84,12 @@
         .toggleClass("active")
         .siblings(".cs_nav_list_wrap")
         .toggleClass("active");
-      stickyHeader();
-    });
-    $(".cs_menu_dropdown_toggle").on("click", function () {
-      $(this).toggleClass("active").siblings("ul").slideToggle();
-      $(this).parent().toggleClass("active");
+      $(".cs_site_header_style_1").toggleClass("active");
     });
   }
 
   /*--------------------------------------------------------------
-    2. Sticky Header
+    03. Sticky Header
   --------------------------------------------------------------*/
   function stickyHeader() {
     var scroll = $(window).scrollTop();
@@ -85,7 +101,7 @@
     }
   }
   /*--------------------------------------------------------------
-    3. Dynamic Background
+    04. Dynamic Background
   --------------------------------------------------------------*/
   function dynamicBackground() {
     $("[data-src]").each(function () {
@@ -95,112 +111,6 @@
       });
     });
   }
-
-  /*--------------------------------------------------------------
-    4. slider
-  --------------------------------------------------------------*/
-
-  // function slickInit() {
-  //   if ($.exists(".cs_slider")) {
-  //     $(".cs_slider").each(function () {
-  //       // Slick Variable
-  //       var $ts = $(this).find(".cs_slider_container");
-  //       var $slickActive = $(this).find(".cs_slider_wrapper");
-  //       var $status = $(this).find(".cs_slider_number");
-  //       // Auto Play
-  //       var autoPlayVar = parseInt($ts.attr("data-autoplay"), 10);
-  //       // Auto Play Time Out
-  //       var autoplaySpdVar = 3000;
-  //       if (autoPlayVar > 1) {
-  //         autoplaySpdVar = autoPlayVar;
-  //         autoPlayVar = 1;
-  //       }
-  //       // Slide Change Speed
-  //       var speedVar = parseInt($ts.attr("data-speed"), 10);
-  //       // Slider Loop
-  //       var loopVar = Boolean(parseInt($ts.attr("data-loop"), 10));
-  //       // Slider Center
-  //       var centerVar = Boolean(parseInt($ts.attr("data-center"), 10));
-  //       // Variable Width
-  //       var variableWidthVar = Boolean(
-  //         parseInt($ts.attr("data-variable-width"), 10)
-  //       );
-  //       // Pagination
-  //       var paginaiton = $(this)
-  //         .find(".cs_pagination")
-  //         .hasClass("cs_pagination");
-  //       // Slide Per View
-  //       var slidesPerView = $ts.attr("data-slides-per-view");
-  //       if (slidesPerView == 1) {
-  //         slidesPerView = 1;
-  //       }
-  //       if (slidesPerView == "responsive") {
-  //         var slidesPerView = parseInt($ts.attr("data-add-slides"), 10);
-  //         var lgPoint = parseInt($ts.attr("data-lg-slides"), 10);
-  //         var mdPoint = parseInt($ts.attr("data-md-slides"), 10);
-  //         var smPoint = parseInt($ts.attr("data-sm-slides"), 10);
-  //         var xsPoing = parseInt($ts.attr("data-xs-slides"), 10);
-  //       }
-  //       // Fade Slider
-  //       var fadeVar = parseInt($($ts).attr("data-fade-slide"));
-  //       fadeVar === 1 ? (fadeVar = true) : (fadeVar = false);
-  //       /* Start Count Slide Number */
-  //       $slickActive.on(
-  //         "init reInit afterChange",
-  //         function (event, slick, currentSlide, nextSlide) {
-  //           var i = (currentSlide ? currentSlide : 0) + 1;
-  //           $status.html(
-  //             `<span class="cs_current_number" data-number="${i}"><span>${i}</span></span> <span class="cs_slider_number_seperator"></span> <span class="cs_total_numbers"  data-number="${slick.slideCount}"><span>${slick.slideCount}</span></span>`
-  //           );
-  //         }
-  //       );
-  //       /* End Count Slide Number */
-  //       // Slick Active Code
-  //       $slickActive.slick({
-  //         autoplay: autoPlayVar,
-  //         dots: paginaiton,
-  //         centerPadding: "28%",
-  //         speed: speedVar,
-  //         infinite: loopVar,
-  //         autoplaySpeed: autoplaySpdVar,
-  //         centerMode: centerVar,
-  //         fade: fadeVar,
-  //         prevArrow: $(this).find(".cs_left_arrow"),
-  //         nextArrow: $(this).find(".cs_right_arrow"),
-  //         appendDots: $(this).find(".cs_pagination"),
-  //         slidesToShow: slidesPerView,
-  //         variableWidth: variableWidthVar,
-  //         swipeToSlide: true,
-  //         responsive: [
-  //           {
-  //             breakpoint: 1400,
-  //             settings: {
-  //               slidesToShow: lgPoint,
-  //             },
-  //           },
-  //           {
-  //             breakpoint: 1200,
-  //             settings: {
-  //               slidesToShow: mdPoint,
-  //             },
-  //           },
-  //           {
-  //             breakpoint: 992,
-  //             settings: {
-  //               slidesToShow: smPoint,
-  //             },
-  //           },
-  //           {
-  //             breakpoint: 768,
-  //             settings: {
-  //               slidesToShow: xsPoing,
-  //             },
-  //           },
-  //         ],
-  //       });
-  //     });
-  //   }
-  // }
 
   /*--------------------------------------------------------------
     05. Swipper Slider
@@ -349,7 +259,7 @@
     }
   }
   /*--------------------------------------------------------------
-    8. Accordian
+    07. Accordian
   --------------------------------------------------------------*/
   function accordian() {
     $(".cs_accordian").children(".cs_accordian_body").hide();
@@ -373,7 +283,7 @@
     });
   }
   /*--------------------------------------------------------------
-    9. Counter Animation
+    08. Counter Animation
   --------------------------------------------------------------*/
   function counterInit() {
     if ($.exists(".odometer")) {
@@ -395,16 +305,94 @@
     }
   }
   /*--------------------------------------------------------------
-    15. Light Gallery
+    09. Light Gallery
   --------------------------------------------------------------*/
   function lightGallery() {
     $(".cs_lightgallery").each(function () {
       $(this).lightGallery({
-        selector: ".cs_lightbox_item",
+        selector: ".cs_gallery_item",
         subHtmlSelectorRelative: false,
-        thumbnail: true,
+        thumbnail: false,
         mousewheel: true,
       });
+    });
+  }
+  /*===========================================================
+    10. Smooth Page Scroll
+  =============================================================*/
+  function smoothScroll() {
+    if (typeof Lenis !== "undefined") {
+      const lenis = new Lenis({
+        duration: 1.2,
+        smooth: true,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    }
+  }
+
+  /*==============================================================
+    11. Dynamic contact form
+  ================================================================*/
+  if ($.exists("#cs_form")) {
+    const form = document.getElementById("cs_form");
+    const result = document.getElementById("cs_result");
+
+    form.addEventListener("submit", function (e) {
+      const formData = new FormData(form);
+      e.preventDefault();
+      var object = {};
+      formData.forEach((value, key) => {
+        object[key] = value;
+      });
+      var json = JSON.stringify(object);
+      result.innerHTML = "Please wait...";
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            result.innerHTML = json.message;
+          } else {
+            console.log(response);
+            result.innerHTML = json.message;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          result.innerHTML = "Something went wrong!";
+        })
+        .then(function () {
+          form.reset();
+          setTimeout(() => {
+            result.style.display = "none";
+          }, 5000);
+        });
+    });
+  }
+  /*=============================================================
+    12. AOS Animation
+  ===============================================================*/
+  function aosInit() {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
     });
   }
 })(jQuery); // End of use strict

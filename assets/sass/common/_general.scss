@@ -25,8 +25,12 @@
   font-size: 40px;
   line-height: 1.2em;
 
-  @media (max-width: 991px) {
-    font-size: 35px;
+  @media (max-width: 1399px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 32px;
   }
 
   @media (max-width: 767px) {
@@ -163,12 +167,12 @@
 /*=============================================  
   Classess for Button Components
 ===============================================*/
-.cs_btn.cs_style_1 {
+.cs_btn_style_1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 56px;
+  padding: 8px 40px;
   font-size: 16px;
   font-weight: 700;
   background: var(--secondary-color);
@@ -280,6 +284,53 @@
   }
 }
 
+.cs_player_btn_style_1 {
+  height: 100px;
+  width: 100px;
+  color: var(--white-color);
+  position: relative;
+  border-radius: 50px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--gray-color);
+    border-radius: 50%;
+  }
+
+  &::after {
+    z-index: 1;
+  }
+
+  &::before {
+    z-index: 0;
+    animation: pulse-border 1500ms linear infinite;
+  }
+
+  svg {
+    position: relative;
+    margin-left: 5px;
+    z-index: 2;
+  }
+
+  &:hover {
+    &::before {
+      animation-play-state: paused;
+    }
+  }
+
+  @media (max-width:575px) {
+    height: 70px;
+    width: 70px;
+  }
+}
 
 @keyframes criss-cross-left {
   0% {
@@ -375,6 +426,10 @@
 ===============================================*/
 .cs_gap_y_40 {
   gap: 40px 0;
+
+  @media (max-width: 991px) {
+    gap: 30px 0;
+  }
 }
 
 .cs_gap_y_30 {
@@ -385,7 +440,7 @@
   gap: 64px 0;
 
   @media (max-width: 991px) {
-    gap: 40px 0;
+    gap: 30px 0;
   }
 }
 
@@ -445,41 +500,38 @@
 }
 
 .cs_section_heading_style_1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
 
-  p {
-    align-self: flex-start;
-  }
+  // p {
+  //   align-self: flex-start;
+  // }
 }
 
 .cs_section_heading_style_2 {
   display: flex;
-  //flex-direction: row;
+  align-items: flex-end;
   justify-content: space-between;
 
-  p {
-    align-self: flex-end;
-  }
-
-  br {
-    display: block;
+  .cs_section_heading_right {
+    width: min(50%, 600px);
+    padding-left: 40px;
+    border-left: 1px solid currentColor;
   }
 
   @media (max-width: 991px) {
-    br {
-      display: none;
-    }
-
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
+
+    .cs_section_heading_right {
+      width: 100%;
+      padding-left: 0;
+      border-left: 0;
+    }
   }
 
-  p {
-    align-self: flex-start;
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 1399px) {

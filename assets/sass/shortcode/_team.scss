@@ -1,13 +1,15 @@
 .cs_team_style_1 {
+  border-radius: 500px 500px 0px 0px;
+
+  .cs_team_thumbnail {
+    position: relative;
+    background-color: var(--gray-color);
     border-radius: 500px 500px 0px 0px;
-    
-        .cs_card_thumbnail {
-            background-color: var(--gray-color);
-            border-radius: inherit;
+  }
 
-        .cs_card_details{
-            padding-top: 24px;
-        }
-    }
+  @media (max-width:767px) {
+    width: min(100%, 386px);
+    margin: 0 auto;
+  }
+
 }
-

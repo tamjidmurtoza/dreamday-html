@@ -29,6 +29,9 @@
 
     .cs_section_heading_style_1 {
       padding-top: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
@@ -73,41 +76,73 @@
 .cs_gallery_style_2 {
   display: flex;
   gap: 40px;
+  flex-wrap: wrap;
   padding-top: 40px;
-  position: relative;
 
-  .cs_gallery_wraper {
-    &:nth-child(2) {
-      position: relative;
-      top: -40px;
+  .cs_gallery_item {
+    display: block;
+
+    img {
+      width: 100%;
+      height: 100%;
     }
-  }
 
-  .cs_gallery_img_style_1 {
-    position: relative;
+    &:nth-child(1) {
+      width: 26%;
+    }
 
-    .cs_about_gallery_btn {
-      transition: all .3s ease;
-      opacity: 0;
-      visibility: hidden;
+    &:nth-child(2) {
+      width: 24%;
+      transform: translateY(-40px);
+    }
+
+    &:nth-child(3) {
+      width: calc(50% - 80px);
+    }
+
+    .cs_gallery_badge {
+      padding: 12px 24px;
       position: absolute;
       top: 32px;
       right: 32px;
-
-      .cs_btn {
-        padding: 12px 24px;
-      }
-
-      &.cs_left {
-        left: 32px;
-      }
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.4s ease;
     }
 
     &:hover {
-      .cs_about_gallery_btn {
+      .cs_gallery_badge {
         opacity: 1;
-        visibility: visible;
+        transform: translateY(0);
       }
+    }
+  }
+
+  @media (max-width: 991px) {
+    gap: 24px;
+    padding-top: 0;
+
+    .cs_gallery_item {
+
+      &:nth-child(1) {
+        width: 50%;
+      }
+
+      &:nth-child(2) {
+        width: calc(50% - 24px);
+        transform: translateY(0);
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 575px) {
+
+    .cs_gallery_item {
+      width: 100% !important;
     }
   }
 }
@@ -119,29 +154,12 @@
   align-items: center;
 }
 
-
-@media (max-width: 767px) {
-  .cs_gallery_style_2 {
-    flex-direction: column;
-    padding-top: 0;
-
-    .cs_gallery_wraper {
-      &:nth-child(2) {
-        position: relative;
-        top: 0;
-      }
-
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  .cs_gallery_style_3 {
-    .cs_gallery_bottom {
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
+// @media (max-width: 767px) {
+//   .cs_gallery_style_3 {
+//     .cs_gallery_bottom {
+//       img {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }

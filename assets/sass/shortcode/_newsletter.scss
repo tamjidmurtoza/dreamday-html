@@ -1,58 +1,91 @@
-.cs_newsletter_style_1 {
-    height: 425px;
+.cs_newsletter_style_1,
+.cs_newsletter_style_2 {
+  min-height: 380px;
+  padding: 90px 0 0;
+
+  .cs_newsletter_text {
+    width: min(100%, 920px);
+    margin: 0 auto;
+  }
+
+  .cs_newsletter_form {
+    width: min(100%, 690px);
+    gap: 24px;
+    margin-bottom: 54px;
+
+    input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      display: block;
+      padding-bottom: 16px;
+      background: transparent;
+      border-bottom: 1px solid var(--primary-color);
+
+      &::placeholder {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .cs_newsletter_flower {
+    position: absolute;
+    left: 50%;
+    bottom: -100px;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 991px) {
+    padding: 60px 0 0;
+
+    .cs_newsletter_form {
+      margin-bottom: 0;
+    }
+
+    .cs_newsletter_flower {
+      position: initial;
+      transform: initial;
+      transform: translateY(50px);
+    }
+  }
+
+  @media (max-width: 575px) {
+    .cs_newsletter_form {
+      flex-direction: column;
+
+      input,
+      button {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .cs_newsletter_style_2 {
-    height: 425px;
 
-   .cs_form_style_1 {
-    input {
-        color: var(--secondary);
-        border-color: var(--secondary);
-        &::placeholder {
-            color: var(--secondary);
-            opacity: .5;
-        }
-    }
-   }
-}
-
-.cs_newsletter_flower {
-    position: absolute;
-    left: 50%;
-    bottom: -55px;
-    transform: translate(-50%);
-}
-
-.cs_form_style_1{
-    padding-top: 36px;
+  .cs_newsletter_form {
 
     input {
-        width: 500px;
-        border: none;
-        border-bottom: 1px solid var(--primary);
-        background: transparent;
-        padding-bottom: 16px;
-        outline: none;
-
-        &::placeholder {
-            opacity: .5;
-        }
+      border-color: var(--secondary-color);
     }
-     button {
-            margin-left: 24px;
-        }
-}
+  }
 
+  .cs_btn_style_1 {
+    color: var(--primary-color);
 
-@media (max-width: 400px) {
-    .cs_form_style_1 {
-        justify-content: start;
-        flex-wrap: wrap;
-        gap: 16px;
-
-        button {
-            margin-left : 0;
-        }
+    span {
+      display: inline-block;
+      text-shadow: 0px 50px 0px currentColor;
+      transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55),
     }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &:hover span {
+      transform: translateY(-50px);
+    }
+  }
 }
