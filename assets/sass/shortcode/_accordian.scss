@@ -1,53 +1,65 @@
 .cs_accordian_in {
-    display: flex;
-    gap: 40px 80px;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  gap: 40px 80px;
+  justify-content: space-between;
+  align-items: center;
 
-    .cs_accordians_style_1{
-        max-width: 631px;
 
-        .cs_accordian {
-            border-bottom: 1px solid var(--primary);
-            padding-bottom: 28px;
-            margin-bottom: 28px;
 
-            &:last-child {
-                margin-bottom: 0;
-            }
+  @media (max-width: 991px) {
+    flex-direction: column;
 
-            &.active {
-                padding-bottom: 24px;
-            }
-            .cs_accordian_head {
-                cursor: pointer;
-            }
+    .cs_accordian_img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
 
-            .cs_accordian_toggler {
-                top: 0;
-                right: 0;
-                transition: all .3s ease;
-            }
+.cs_accordian.cs_style_1 {
+  border-bottom: 1px solid var(--primary-color);
 
-            &.active {
-                .cs_accordian_head {
-                    padding-bottom: 16px;
-                    pointer-events: none;
-                }
-                .cs_accordian_toggler{
-                    transform: rotate(45deg);
-                }
-            }
-        }
+  .cs_accordian_head {
+    cursor: pointer;
+    padding: 0 60px 28px 0;
+  }
+
+
+  .cs_accordian_toggler {
+    top: 0;
+    right: 0;
+    transition: transform .3s ease;
+  }
+
+  .cs_accordian_body {
+    margin-top: -12px;
+    padding-bottom: 24px;
+  }
+
+  &.active {
+    .cs_accordian_head {
+      pointer-events: none;
     }
 
-    @media (max-width: 991px) {
-            flex-direction: column;
+    .cs_accordian_toggler {
+      transform: rotate(45deg);
+    }
+  }
+}
 
-            .cs_accordian_img {
-                img {
-                    width: 100%;
-                }
-            }
-        }
+.cs_accordians_style_1 {
+  padding-left: 50px;
+
+  .cs_accordian.cs_style_1 {
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width:1199px) {
+    padding-left: 0;
+  }
 }

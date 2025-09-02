@@ -1,41 +1,13 @@
+/*=================================================
+   Service Details Page
+ ==================================================*/
+.cs_grid_style_1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 30px 65px;
 
-.cs_service_cart.cs_style_1{
-    display: flex;
-    gap: 56px;
-    padding-bottom: 56px;
-}
-.cs_service_cart.cs_style_2{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 56px;
-    padding-bottom: 56px;
-}
-
-.cs_service_cart_details {
-    max-width: 488px;
-    padding-top: 208px;
-    
-    .cs_section_title {
-        padding-bottom: 28px;
-    }
-}
-.cs_service_cart_photo_section {
-    .cs_service_cart_img {
-        height: 412px;
-    }
-}
-
-//////// service details///////////
-/// 
-.cs_work_proces {
-    display: flex;
-    gap: 56px;
-    padding: 56px 0 0 56px;
-
-    .cs_work_proces_text  {
-        max-width: 315px;
-        >h2 {
-            padding-bottom: 16px;
-        }
-    }
+  @media (max-width:991px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

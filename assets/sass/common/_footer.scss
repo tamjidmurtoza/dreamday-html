@@ -112,6 +112,13 @@
     }
   }
 
+  @media (max-width: 767px) {
+    .cs_footer_bottom {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+  }
+
   @media (max-width: 575px) {
     .cs_footer_row {
       flex-direction: column;
