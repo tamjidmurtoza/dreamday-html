@@ -2,14 +2,14 @@
   "use strict";
 
   /*
-  |--------------------------------------------------------------------------
+  |===================================================================
   | Template Name: DreamDay
   | Author: Laralink
   | Version: 1.0.0
-  |--------------------------------------------------------------------------
-  |--------------------------------------------------------------------------
+  |===================================================================
+  |===================================================================
   | TABLE OF CONTENTS:
-  |--------------------------------------------------------------------------
+  |===================================================================
   |
   | 01. Preloader
   | 02. Mobile Menu
@@ -26,9 +26,9 @@
   |
   */
 
-  /*--------------------------------------------------------------
+  /*================================================================
     Scripts initialization
-  --------------------------------------------------------------*/
+  ==================================================================*/
   $.exists = function (selector) {
     return $(selector).length > 0;
   };
@@ -214,6 +214,46 @@
         },
       });
     });
+    // Product Single Slider
+    if ($(".cs_single_property_slider")) {
+      // Initialize Thumbnail slider first
+      const propertyNav = new Swiper(".cs_single_property_nav", {
+        spaceBetween: 40,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        },
+      });
+
+      // Initialize Main slider with connection to thumbnails
+      new Swiper(".cs_single_property_slider", {
+        spaceBetween: 0,
+        slidesPerView: 1,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        thumbs: {
+          swiper: propertyNav,
+        },
+        loop: false,
+        autoplay: false,
+      });
+    }
   }
   /*===========================================================
     06. Video Modal

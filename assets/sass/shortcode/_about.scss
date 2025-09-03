@@ -1,4 +1,4 @@
-.cs_about_section_style_1 {
+.cs_about_style_1 {
   position: relative;
 
   .container {
@@ -100,22 +100,6 @@
   }
 
   @media (max-width: 767px) {}
-}
-
-.cs_about_svg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-
-  &::after,
-  &::before {
-    content: "";
-    background-color: var(--primary);
-    opacity: 0.5;
-    width: 471px;
-    height: 1px;
-  }
 }
 
 .cs_about_style_2 {
@@ -258,6 +242,46 @@
         position: initial;
         margin-bottom: 30px;
         text-align: right;
+      }
+    }
+  }
+}
+
+.cs_about_style_3 {
+  .cs_about_flower {
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      background-color: var(--primary-color);
+      opacity: 0.5;
+      width: calc(50% - 150px);
+      height: 1px;
+      position: absolute;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  .cs_about_details {
+    width: min(100%, 1050px);
+    margin: 0 auto;
+  }
+
+  @media (max-width:991px) {
+    .cs_about_flower {
+      position: relative;
+
+      &::after,
+      &::before {
+        width: calc(50% - 90px);
       }
     }
   }
