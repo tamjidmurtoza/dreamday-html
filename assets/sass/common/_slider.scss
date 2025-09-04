@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-  5. Slider
-----------------------------------------------------------------*/
+/*=========================================================
+  06. Slider
+===========================================================*/
 .cs_slider {
   position: relative;
 }
@@ -113,44 +113,21 @@
   }
 }
 
-.cs_pagination.cs_style_1 {
-  display: flex;
-  justify-content: center;
+/*==============================================
+ Gallery Slider
+================================================*/
+.cs_nav_thumbnail {
+  height: 240px;
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex !important;
-    width: 100%;
+  img {
+    height: 100%;
   }
 
-  li {
-    display: flex;
-    flex: 1;
-    height: 4px;
+  @media (max-width:1199px) {
+    height: 200px;
+  }
 
-    button {
-      height: 100%;
-      width: 100%;
-      font-size: 0;
-      color: transparent;
-      padding: 0;
-      background-color: rgb(249 251 243 / 50%);
-      border: none;
-      outline: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: rgb(249 251 243 / 75%);
-      }
-    }
-
-    &.slick-active {
-      button {
-        background-color: var(--white-color);
-      }
-    }
+  @media (max-width:991px) {
+    height: auto;
   }
 }

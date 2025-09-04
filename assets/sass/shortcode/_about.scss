@@ -1,3 +1,6 @@
+/*=========================================================
+  09. About
+===========================================================*/
 .cs_about_style_1 {
   position: relative;
 
@@ -146,6 +149,12 @@
     }
   }
 
+  .cs_about_bottom {
+    .cs_about_bottom_img {
+      padding-right: 60%;
+    }
+  }
+
   .cs_counter_section {
     position: relative;
     z-index: 2;
@@ -170,12 +179,6 @@
       padding-left: 70%;
     }
 
-    .cs_about_bottom {
-      .cs_about_bottom_img {
-        padding-right: 55%;
-      }
-    }
-
     .cs_counter_section {
       padding-left: 48%;
     }
@@ -189,11 +192,8 @@
 
     .cs_about_bottom {
       .cs_about_bottom_img {
-        padding-right: 21%;
-
-        img {
-          width: 100%;
-        }
+        padding-right: 23%;
+        margin-bottom: 20px;
       }
 
       .cs_signature {
@@ -204,9 +204,6 @@
   }
 
   @media (max-width: 991px) {
-    // &::before {
-    //   display: none;
-    // }
 
     .cs_about_top {
       .cs_about_top_img {
@@ -232,10 +229,6 @@
       .cs_about_bottom_img {
         padding-right: 0%;
         margin-bottom: 30px;
-
-        img {
-          width: 100%;
-        }
       }
 
       .cs_signature {

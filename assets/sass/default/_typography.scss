@@ -1,22 +1,6 @@
-/*--------------------------------------------------------------
->> TABLE OF CONTENTS:
-----------------------------------------------------------------
-1. Typography
-2. Preloader
-3. Spacing
-4. General
-5. Video Modal
-6. Header
-7. Hero
-8. Iconbox
-9. Testimonial
-10. Posts
-11. Portfolio
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-1. Typography
-----------------------------------------------------------------*/
+/*=========================================================
+  02. Typhography
+===========================================================*/
 // Google Fonts
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -31,10 +15,6 @@ html {
   overflow-x: clip;
   background-color: var(--secondary-color);
 }
-
-// html {
-  //   font-size: 16px;
-  // }
 
 h1,
 h2,

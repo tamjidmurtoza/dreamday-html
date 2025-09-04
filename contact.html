@@ -83,14 +83,15 @@
     <!-- End hero -->
     <!-- start contact form -->
     <section>
-      <div class="cs_height_120 cs_height_lg_80"></div>
+      <div class="cs_height_80 cs_height_lg_80"></div>
       <div class="container">
         <div class="cs_section_heading_style_3 text-center">
           <p class="cs_section_subtitle text-uppercase cs_mb_16">Leave a message</p>
           <h2 class="cs_section_title cs_fs_64 text-uppercase mb-0">Start Your Journey With Us</h2>
         </div>
         <div class="cs_height_80 cs_height_lg_40"></div>
-        <form action="#" class="cs_contact_form_style_1 row cs_gap_y_30">
+        <form action="https://api.web3forms.com/submit" method="POST" class="cs_contact_form_style_1 row cs_gap_y_30" id="cs_form">
+            <input type="hidden" name="access_key" value="cd98b256-0db3-478c-ab28-1ec94f80447c">
           <div class="col-md-6">
             <div class="cs_input_wraper">
               <label for="name">Your Name</label>
@@ -119,6 +120,7 @@
             <button type="submit" class="cs_btn_style_1 cs_brown text-uppercase">
             <span>Submit Message</span>
             </button>
+            <div id="cs_result" class="cs_fs_14"></div>
           </div>
         </form>
       </div>
@@ -141,7 +143,7 @@
     </section>
     <!-- End Location Section -->
     <!-- End Newsletter Section -->
-    <section class="cs_newsletter_style_1 cs_bg_filed position-relative" data-src="assets/img/newsletter_bg.svg">
+    <div class="cs_newsletter_style_1 cs_bg_filed position-relative" data-src="assets/img/newsletter_bg.svg">
       <div class="container">
         <div class="cs_newsletter_text cs_center_column">
           <p class="text-center cs_mb_36 cs_mb_lg_30">Stay in the loop with the latest trends, tips, and exclusive offers. Subscribe to our newsletter and be the first to know about upcoming DREAMDAY events and promotions.</p>
@@ -154,7 +156,7 @@
         <img src="assets/img/flower_2.svg" alt="flower">
         </span>
       </div>
-    </section>
+    </div>
     <!-- End Newsletter Section -->
     <!-- Start Footer Section -->
     <footer class="cs_footer_style_1">

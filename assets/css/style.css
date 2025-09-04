@@ -1,3 +1,32 @@
+/*--------------------------------------------------------------
+>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+01. Variable
+02. Typhography
+03. Spacing
+04. General
+05. Header
+06. Slider
+07. Hero
+08. Video Modal
+09. About
+10. Cards
+11. Iconbox
+12. Achievement
+13. Gallery
+14. Testimonial
+15. Newsletter
+16. Service
+17. Accordian
+18. Team
+19. Contact
+20. Video Block
+21. Footer
+
+--------------------------------------------------------------*/
+/*=========================================================
+  01. Variable
+===========================================================*/
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --white-color: #fff;
@@ -9,24 +38,9 @@
   --secondary-font: "Montserrat", sans-serif;
 }
 
-/*--------------------------------------------------------------
->> TABLE OF CONTENTS:
-----------------------------------------------------------------
-1. Typography
-2. Preloader
-3. Spacing
-4. General
-5. Video Modal
-6. Header
-7. Hero
-8. Iconbox
-9. Testimonial
-10. Posts
-11. Portfolio
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-1. Typography
-----------------------------------------------------------------*/
+/*=========================================================
+  02. Typhography
+===========================================================*/
 body,
 html {
   color: var(--primary-color);
@@ -184,9 +198,9 @@ label {
   margin-bottom: 8px;
 }
 
-/*--------------------------------------------------------------
-  3. Spacing
-----------------------------------------------------------------*/
+/*============================================================
+  03. Spacing
+==============================================================*/
 @media screen and (min-width: 992px) {
   .cs_height_1 {
     height: 1px;
@@ -1366,12 +1380,17 @@ label {
     margin-bottom: 50px;
   }
 }
-/*--------------------------------------------------------------
+/*============================================================
   04. General
-----------------------------------------------------------------*/
+==============================================================*/
 /*=====================================  
   Classess for Fonts Size  
 =======================================*/
+.cs_fs_14 {
+  font-size: 14px;
+  line-height: 2em;
+}
+
 .cs_fs_16 {
   font-size: 16px;
   line-height: 1.5em;
@@ -1525,10 +1544,6 @@ label {
   background-size: cover;
 }
 
-.cs_bg_fixed {
-  background-attachment: fixed;
-}
-
 .cs_img_border img {
   width: 100%;
   border: 16px solid var(--white-color);
@@ -1628,15 +1643,6 @@ label {
   transform-origin: top right;
 }
 
-.cs_contact_btn a {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-}
-.cs_contact_btn a:hover {
-  background: var(--primary-color);
-}
-
 .cs_player_btn_style_1 {
   height: 100px;
   width: 100px;
@@ -1676,37 +1682,6 @@ label {
     height: 70px;
     width: 70px;
   }
-}
-
-/*=============================================  
-  Classess for Border Radius
-===============================================*/
-.cs_radius_5 {
-  border-radius: 5px;
-}
-
-.cs_radius_10 {
-  border-radius: 10px;
-}
-
-.cs_radius_15 {
-  border-radius: 15px;
-}
-
-.cs_radius_20 {
-  border-radius: 20px;
-}
-
-.cs_radius_30 {
-  border-radius: 30px;
-}
-
-.cs_radius_50 {
-  border-radius: 50px;
-}
-
-.cs_radius_100 {
-  border-radius: 50%;
 }
 
 /*=============================================  
@@ -1754,19 +1729,6 @@ label {
   .cs_gap_y_64 {
     gap: 30px 0;
   }
-}
-
-.cs_gap_xy {
-  gap: 65px 0;
-}
-
-.cs_row_gap_80 {
-  margin-left: -40px;
-  margin-right: -40px;
-}
-.cs_row_gap_80 > * {
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 .cs_row_gap_40 {
@@ -1870,6 +1832,9 @@ label {
     width: 375px;
   }
 }
+/*=========================================================
+  05. Header
+===========================================================*/
 .cs_site_header_style_1 {
   position: fixed;
   top: 0;
@@ -2054,9 +2019,9 @@ label {
   transition-delay: 0s, 0.2s;
 }
 
-/*--------------------------------------------------------------
-  5. Slider
-----------------------------------------------------------------*/
+/*=========================================================
+  06. Slider
+===========================================================*/
 .cs_slider {
   position: relative;
 }
@@ -2152,41 +2117,29 @@ label {
   }
 }
 
-.cs_pagination.cs_style_1 {
-  display: flex;
-  justify-content: center;
+/*==============================================
+ Gallery Slider
+================================================*/
+.cs_nav_thumbnail {
+  height: 240px;
 }
-.cs_pagination.cs_style_1 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex !important;
-  width: 100%;
-}
-.cs_pagination.cs_style_1 li {
-  display: flex;
-  flex: 1;
-  height: 4px;
-}
-.cs_pagination.cs_style_1 li button {
+.cs_nav_thumbnail img {
   height: 100%;
-  width: 100%;
-  font-size: 0;
-  color: transparent;
-  padding: 0;
-  background-color: rgba(249, 251, 243, 0.5);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
-.cs_pagination.cs_style_1 li button:hover {
-  background-color: rgba(249, 251, 243, 0.75);
+@media (max-width: 1199px) {
+  .cs_nav_thumbnail {
+    height: 200px;
+  }
 }
-.cs_pagination.cs_style_1 li.slick-active button {
-  background-color: var(--white-color);
+@media (max-width: 991px) {
+  .cs_nav_thumbnail {
+    height: auto;
+  }
 }
 
+/*=========================================================
+  07. Hero
+===========================================================*/
 .cs_hero_style_1,
 .cs_hero_style_2 {
   height: 100%;
@@ -2221,9 +2174,22 @@ label {
 .cs_hero_style_1 .cs_hero_content .cs_hero_text {
   max-width: 1040px;
 }
+@media (max-width: 1199px) {
+  .cs_hero_style_1 {
+    padding: 160px 0;
+  }
+}
 
 .cs_hero_style_2 {
   padding: 164px 0 198px;
+}
+@media (max-width: 991px) {
+  .cs_hero_style_2 {
+    padding: 120px 0 120px;
+  }
+  .cs_hero_style_2::before {
+    height: 190px;
+  }
 }
 
 .cs_hero_style_3 {
@@ -2249,9 +2215,9 @@ label {
   color: currentColor;
 }
 
-/*--------------------------------------------------------------
-  5. Video Modal
-----------------------------------------------------------------*/
+/*=======================================================
+  08. Video Modal
+=========================================================*/
 .cs_video_popup {
   position: fixed;
   z-index: 1000;
@@ -2415,6 +2381,9 @@ label {
 }
 
 /*End Video Popup*/
+/*=========================================================
+  09. About
+===========================================================*/
 .cs_about_style_1 {
   position: relative;
 }
@@ -2527,6 +2496,9 @@ label {
   top: 0;
   left: 50%;
 }
+.cs_about_style_2 .cs_about_bottom .cs_about_bottom_img {
+  padding-right: 60%;
+}
 .cs_about_style_2 .cs_counter_section {
   position: relative;
   z-index: 2;
@@ -2547,9 +2519,6 @@ label {
   .cs_about_style_2 .cs_about_top_img {
     padding-left: 70%;
   }
-  .cs_about_style_2 .cs_about_bottom .cs_about_bottom_img {
-    padding-right: 55%;
-  }
   .cs_about_style_2 .cs_counter_section {
     padding-left: 48%;
   }
@@ -2560,10 +2529,8 @@ label {
     padding-left: 0;
   }
   .cs_about_style_2 .cs_about_bottom .cs_about_bottom_img {
-    padding-right: 21%;
-  }
-  .cs_about_style_2 .cs_about_bottom .cs_about_bottom_img img {
-    width: 100%;
+    padding-right: 23%;
+    margin-bottom: 20px;
   }
   .cs_about_style_2 .cs_about_bottom .cs_signature {
     left: initial;
@@ -2588,9 +2555,6 @@ label {
   .cs_about_style_2 .cs_about_bottom .cs_about_bottom_img {
     padding-right: 0%;
     margin-bottom: 30px;
-  }
-  .cs_about_style_2 .cs_about_bottom .cs_about_bottom_img img {
-    width: 100%;
   }
   .cs_about_style_2 .cs_about_bottom .cs_signature {
     position: initial;
@@ -2629,6 +2593,9 @@ label {
   }
 }
 
+/*=========================================================
+  10. Cards
+===========================================================*/
 .cs_card_style_1 {
   overflow: hidden;
   border-radius: 500px 500px 0px 0px;
@@ -3075,6 +3042,9 @@ label {
   }
 }
 
+/*=========================================================
+  11. Iconbox
+===========================================================*/
 .cs_iconbox_style_1 .cs_iconbox_icon img {
   transition: transform 1s cubic-bezier(0.85, 0.5, 0.5, 1.5);
 }
@@ -3082,6 +3052,9 @@ label {
   transform: rotateY(360deg);
 }
 
+/*=========================================================
+  12. Achievement
+===========================================================*/
 .cs_achievement_style_1 {
   position: relative;
 }
@@ -3149,6 +3122,9 @@ label {
   }
 }
 
+/*=========================================================
+  13. Gallery
+===========================================================*/
 .cs_gallery_section {
   position: relative;
 }
@@ -3265,13 +3241,9 @@ label {
   }
 }
 
-.cs_gallery_style_3 {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-}
-
+/*=========================================================
+  14. Testimonial
+===========================================================*/
 .cs_testimonial_style_1 {
   min-height: 688px;
   padding: 40px;
@@ -3328,6 +3300,9 @@ label {
   width: 100%;
 }
 
+/*=========================================================
+  15. Newsletter
+===========================================================*/
 .cs_newsletter_style_1,
 .cs_newsletter_style_2 {
   min-height: 380px;
@@ -3413,7 +3388,7 @@ label {
 }
 
 /*=================================================
-   Service Details Page
+  16. Service
  ==================================================*/
 .cs_grid_style_1 {
   display: grid;
@@ -3427,6 +3402,9 @@ label {
   }
 }
 
+/*=========================================================
+  17. Accordian
+===========================================================*/
 .cs_accordian_in {
   display: flex;
   gap: 40px 80px;
@@ -3480,6 +3458,9 @@ label {
   }
 }
 
+/*=========================================================
+  18. Team
+===========================================================*/
 .cs_team_style_1 {
   border-radius: 500px 500px 0px 0px;
 }
@@ -3495,12 +3476,9 @@ label {
   }
 }
 
-.cs_location_map_style_1 iframe {
-  width: 100%;
-  min-height: 650px;
-  filter: brightness(80%) grayscale(0.9);
-}
-
+/*=========================================================
+  19. Contact
+===========================================================*/
 .cs_contact_form_style_1 {
   padding: 45px 30px 50px;
   margin: 0 auto;
@@ -3509,7 +3487,7 @@ label {
   /* Firefox */
 }
 .cs_contact_form_style_1 label {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   font-weight: 500;
 }
 .cs_contact_form_style_1 .cs_form_field {
@@ -3518,8 +3496,10 @@ label {
   border: none;
   outline: none;
   resize: none;
-  background: var(--secondary-color);
-  padding: 15px 20px;
+  padding: 14px 20px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 .cs_contact_form_style_1 .cs_form_field::placeholder {
   opacity: 0.75;
@@ -3546,6 +3526,15 @@ label {
   }
 }
 
+.cs_location_map_style_1 iframe {
+  width: 100%;
+  min-height: 650px;
+  filter: brightness(80%) grayscale(0.9);
+}
+
+/*=========================================================
+  20. Video Block
+===========================================================*/
 .cs_video_block.cs_style_1 {
   min-height: 620px;
   position: relative;
@@ -3573,6 +3562,9 @@ label {
     opacity: 0;
   }
 }
+/*=========================================================
+  21. Footer
+===========================================================*/
 .cs_footer_style_1 .cs_footer_main,
 .cs_footer_style_2 .cs_footer_main {
   padding-bottom: 64px;

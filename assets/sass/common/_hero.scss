@@ -1,3 +1,6 @@
+/*=========================================================
+  07. Hero
+===========================================================*/
 .cs_hero_style_1,
 .cs_hero_style_2 {
   height: 100%;
@@ -34,10 +37,22 @@
       max-width: 1040px;
     }
   }
+
+  @media (max-width:1199px) {
+    padding: 160px 0;
+  }
 }
 
 .cs_hero_style_2 {
   padding: 164px 0 198px;
+
+  @media (max-width:991px) {
+    padding: 120px 0 120px;
+
+    &::before {
+      height: 190px;
+    }
+  }
 }
 
 .cs_hero_style_3 {
