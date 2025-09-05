@@ -8,16 +8,27 @@
     <!-- Favicon -->
     <link rel="icon" href="assets/img/favicon.png">
     <!-- All CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/lightgallery.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+     <link rel="preload" href="assets/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="assets/css/aos.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/swiper.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/odometer.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/lightgallery.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!-- Site Title -->
     <title>DreamDay - Wedding Planner Website HTML Template</title>
   </head>
   <body>
+    <!-- Preloader Start -->
+    <div class="cs_preloader cs_center">
+      <div class="cs_preloader_in">
+        <div class="cs_center_column text-center">
+          <div class="cs_preloader_icon cs_center cs_fs_40 cs_mb_20"><i class="fa-regular fa-heart"></i></div>
+          <div class="cs_preloader_text cs_fs_48 cs_bold" data-text="DREAMDAY">DREAMDAY</div>
+        </div>
+      </div>
+     </div>
+    <!-- Preloader End -->
     <!-- Start header -->
     <header class="cs_site_header_style_1 cs_primary_color cs_sticky_header">
       <div class="cs_main_header position-relative">
@@ -377,12 +388,12 @@
       </div>
     </footer>
     <!-- End Footer Section -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/lightgallery.min.js"></script>
-    <script src="assets/js/swiper.min.js"></script>
-    <script src="assets/js/lenis.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
-    <script src="assets/js/main.js"></script>
+   <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/odometer.min.js" defer></script>
+    <script src="assets/js/lightgallery.min.js" defer></script>
+    <script src="assets/js/swiper.min.js" defer></script>
+    <script src="assets/js/lenis.min.js" defer></script>
+    <script src="assets/js/aos.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>

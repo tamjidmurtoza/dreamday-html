@@ -429,6 +429,71 @@
 }
 
 /*===========================================================  
+  07. Preloade
+=============================================================*/
+.cs_preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  background-color: var(--secondary-color);
+
+  .cs_preloader_icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    position: relative;
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+
+    &::before {
+      content: "\f004";
+      font-size: inherit;
+      font-weight: 900;
+      color: var(--primary-color);
+      font-family: "Font Awesome 7 Free";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: heartFill 2s linear infinite;
+    }
+  }
+
+  .cs_preloader_text {
+    position: relative;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--primary-color);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: transparent;
+      content: attr(data-text);
+      -webkit-text-fill-color: var(--primary-color);
+      clip-path: inset(0% 100% 0% 0%);
+      animation: fillText 4s linear infinite;
+    }
+  }
+}
+
+@keyframes heartFill {
+  100% {
+    font-weight: 400;
+  }
+}
+
+@keyframes fillText {
+  to {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+/*===========================================================  
   All Common Hide Components
 =============================================================*/
 @media (max-width: 991px) {

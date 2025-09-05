@@ -8,7 +8,7 @@
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 115%;
     height: 200px;
     background: var(--secondary-color);
@@ -31,6 +31,7 @@
 .cs_hero_style_1 {
   height: 100%;
   padding: 634px 0 140px;
+  background-position: top center !important;
 
   .cs_hero_content {
     .cs_hero_text {
@@ -38,7 +39,7 @@
     }
   }
 
-  @media (max-width:1199px) {
+  @media (max-width: 1199px) {
     padding: 160px 0;
   }
 }
@@ -46,7 +47,7 @@
 .cs_hero_style_2 {
   padding: 164px 0 198px;
 
-  @media (max-width:991px) {
+  @media (max-width: 991px) {
     padding: 120px 0 120px;
 
     &::before {
@@ -65,7 +66,8 @@
   a {
     background-repeat: no-repeat;
     background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
-    transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1), color 0.27s ease-out;
+    transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+      color 0.27s ease-out;
     background-position: 100% calc(100% - 0px);
     background-size: 0 1px;
 
@@ -81,4 +83,9 @@
       color: currentColor;
     }
   }
+}
+
+.cs_main_content {
+  width: min(100%, 1440px);
+  margin: 0 auto;
 }
