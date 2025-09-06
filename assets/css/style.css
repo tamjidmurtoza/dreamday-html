@@ -2229,7 +2229,6 @@ label {
 .cs_hero_style_1 {
   height: 100%;
   padding: 634px 0 140px;
-  background-position: top center !important;
 }
 .cs_hero_style_1 .cs_hero_content .cs_hero_text {
   max-width: 1040px;
@@ -2954,11 +2953,11 @@ label {
 .cs_card_style_5:hover .cs_card_feature_list li::before {
   background-color: var(--secondary-color);
 }
-.cs_card_style_5:hover .cs_btn.cs_style_1 {
+.cs_card_style_5:hover .cs_btn_style_1 {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
-.cs_card_style_5:hover .cs_btn.cs_style_1:hover span {
+.cs_card_style_5:hover .cs_btn_style_1:hover span {
   transform: translateY(-50px);
 }
 

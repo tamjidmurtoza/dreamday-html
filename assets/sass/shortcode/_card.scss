@@ -129,7 +129,7 @@
     }
   }
 
-  @media (max-width:575px) {
+  @media (max-width: 575px) {
     width: min(100%, 280px);
     margin: 0 auto;
   }
@@ -354,7 +354,7 @@
       }
     }
 
-    .cs_btn.cs_style_1 {
+    .cs_btn_style_1 {
       background-color: var(--secondary-color);
       color: var(--primary-color);
 
@@ -384,7 +384,6 @@
     flex-direction: column;
     background-color: var(--gray-color);
     padding: 64px;
-
 
     .cs_card_title {
       margin-top: auto;
@@ -420,7 +419,6 @@
     }
 
     .cs_package_price {
-
       ul {
         >li {
           display: flex;
@@ -473,7 +471,6 @@
   }
 
   @media (max-width: 991px) {
-
     .cs_package_details {
       flex-wrap: wrap;
       gap: 30px;
@@ -521,7 +518,7 @@
     background-color: var(--gray-color);
   }
 
-  @media (max-width:1199px) {
+  @media (max-width: 1199px) {
     .cs_card_thumbnail {
       width: 60%;
     }
@@ -531,7 +528,7 @@
     }
   }
 
-  @media (max-width:991px) {
+  @media (max-width: 991px) {
     padding-top: 0;
 
     .cs_card_thumbnail {
