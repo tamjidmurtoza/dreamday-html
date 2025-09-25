@@ -325,6 +325,42 @@
   }
 }
 
+.cs_scrolltop_btn {
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 111;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(70px);
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  transition: all 0.3s ease-in-out;
+
+  span {
+    animation: slide-up 2s linear infinite;
+  }
+
+  i {
+    text-shadow: 0px 11px 0px currentColor;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 /*=============================================  
   Classess for Utility Components
 ===============================================*/

@@ -22,21 +22,23 @@
   | 09. Light Gallery
   | 10. Smooth Page Scroll
   | 11. Dynamic contact form
-  | 12. AOS Animation
+  | 12. Scroll Up
+  | 13. AOS Animation
   |
   */
 
   /*================================================================
     Scripts initialization
   ==================================================================*/
-  $.exists = function (selector) {
-    return $(selector).length > 0;
-  };
+  if (!$.exists) {
+    $.exists = (selector) => $(selector).length > 0;
+  }
   $(window).on("load", function () {
     preloader();
   });
   $(window).on("scroll", function () {
     stickyHeader();
+    showScrollUp();
   });
 
   $(function () {
@@ -49,6 +51,7 @@
     counterInit();
     lightGallery();
     smoothScroll();
+    scrollUp();
     aosInit();
     if ($.exists(".cs_getting_year")) {
       const date = new Date();
@@ -114,6 +117,10 @@
     05. Swipper Slider
   =============================================================*/
   function swiperInit() {
+    if (typeof Swiper === "undefined") {
+      console.warn("Swiper library not loaded");
+      return;
+    }
     const sliders = document.querySelectorAll(".cs_slider");
 
     sliders.forEach((slider) => {
@@ -215,7 +222,7 @@
       });
     });
     // Product Single Slider
-    if ($(".cs_single_property_slider")) {
+    if ($(".cs_single_property_slider").length > 0) {
       // Initialize Thumbnail slider first
       const propertyNav = new Swiper(".cs_single_property_nav", {
         spaceBetween: 40,
@@ -318,19 +325,22 @@
     08. Counter Animation
   =============================================================*/
   function counterInit() {
-    if ($.exists(".odometer")) {
-      $(window).on("scroll", function () {
-        function winScrollPosition() {
-          var scrollPos = $(window).scrollTop(),
-            winHeight = $(window).height();
-          var scrollPosition = Math.round(scrollPos + winHeight / 1.2);
-          return scrollPosition;
-        }
+    if ($(".odometer").length > 0) {
+      let triggered = [];
 
-        $(".odometer").each(function () {
-          var elemOffset = $(this).offset().top;
-          if (elemOffset < winScrollPosition()) {
-            $(this).html($(this).data("count-to"));
+      $(window).on("scroll.counterInit", function () {
+        let scrollPos = $(window).scrollTop(),
+          winHeight = $(window).height(),
+          scrollPosition = Math.round(scrollPos + winHeight / 1.2);
+
+        $(".odometer").each(function (index) {
+          let $this = $(this);
+          let elemOffset = $this.offset().top;
+
+          // Run only once per element
+          if (elemOffset < scrollPosition && !triggered[index]) {
+            $this.html($this.data("count-to"));
+            triggered[index] = true;
           }
         });
       });
@@ -415,7 +425,30 @@
     });
   }
   /*=============================================================
-    12. AOS Animation
+    12. Scroll Up
+  ===============================================================*/
+  function scrollUp() {
+    $(".cs_scrolltop_btn").on("click", function (e) {
+      e.preventDefault();
+      $("html,body").animate(
+        {
+          scrollTop: 0,
+        },
+        0
+      );
+    });
+  }
+  /* For Scroll Up */
+  function showScrollUp() {
+    let scroll = $(window).scrollTop();
+    if (scroll >= 350) {
+      $(".cs_scrolltop_btn").addClass("active");
+    } else {
+      $(".cs_scrolltop_btn").removeClass("active");
+    }
+  }
+  /*=============================================================
+    13. AOS Animation
   ===============================================================*/
   function aosInit() {
     AOS.init({
