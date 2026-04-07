@@ -8,11 +8,18 @@
   }
 
   .cs_footer_row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, auto));
+    gap: 50px 40px;
     text-transform: uppercase;
+  }
+
+  .cs_footer_col {
+    grid-column: auto / span 1;
+
+    &:nth-child(1) {
+      grid-column: auto / span 3;
+    }
   }
 
   .cs_social_links {
@@ -50,6 +57,8 @@
     padding: 0;
 
     li {
+      text-wrap: nowrap;
+
       &:not(:last-child) {
         margin-bottom: 8px;
       }
@@ -68,6 +77,13 @@
     &:hover {
       background-size: 100% 1px;
       background-position: 0 calc(100% - 0px);
+    }
+  }
+
+  .cs_section_title {
+
+    span {
+      font-weight: 700;
     }
   }
 
@@ -104,6 +120,13 @@
     }
   }
 
+  @media (max-width: 1199px) {
+    .cs_footer_row {
+      gap: 40px 20px;
+      grid-template-columns: repeat(3, minmax(120px, auto));
+    }
+  }
+
   @media (max-width: 991px) {
     .cs_footer_main {
       padding-bottom: 30px;
@@ -124,25 +147,34 @@
 
   @media (max-width: 575px) {
     .cs_footer_row {
-      flex-direction: column;
+      gap: 30px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cs_footer_col {
+      grid-column: auto / span 1 !important;
     }
   }
 }
 
 .cs_footer_style_2 {
-  .cs_footer_row {
-    flex-wrap: nowrap;
+  .cs_footer_col {
 
-    .cs_footer_col {
+    &:nth-child(1) {
+      grid-column: auto / span 1;
+    }
 
-      &:nth-child(4) {
-        width: 45%;
-      }
+    &:nth-child(4) {
+      grid-column: auto / span 3;
     }
   }
 
   .cs_section_title {
     margin-bottom: 64px;
+
+    span {
+      font-weight: 700;
+    }
   }
 
   .cs_newsletter_style_1 {
@@ -150,42 +182,41 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 30px;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+
+    .cs_newsletter_form {
+      margin-bottom: 0;
+    }
+
+    input {
+      color: var(--primary-color);
+    }
   }
 
   @media (max-width:1199px) {
-    .cs_footer_row {
-      flex-wrap: wrap;
-      gap: 60px 30px;
+    .cs_footer_col {
 
-      .cs_footer_col {
-        &:nth-child(1) {
-          order: 2;
-        }
+      &:nth-child(1) {
+        order: 2;
+      }
 
-        &:nth-child(2) {
-          order: 3;
-        }
+      &:nth-child(2) {
+        order: 3;
+      }
 
-        &:nth-child(3) {
-          order: 4;
-        }
+      &:nth-child(3) {
+        order: 4;
+      }
 
-        &:nth-child(4) {
-          width: 100%;
-          order: 1;
-        }
+      &:nth-child(4) {
+        order: 1;
       }
     }
 
     .cs_newsletter_form {
       width: 100%;
-    }
-  }
-
-  @media (max-width:991px) {
-    .cs_footer_row {
-      gap: 30px;
     }
   }
 }

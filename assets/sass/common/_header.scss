@@ -39,10 +39,11 @@
     .cs_main_header_in {
       height: 80px;
     }
-  }
 
-  &.active {
-    color: var(--primary-color);
+    &.cs_secondary_color {
+      color: var(--white-color);
+      background-color: var(--primary-color);
+    }
   }
 
   @media (min-width: 1200px) {
@@ -153,6 +154,15 @@
 
     .cs_menu_toggle {
       display: inline-block;
+    }
+
+    &.cs_secondary_color {
+      .cs_nav {
+        .cs_nav_list_wrap {
+          color: var(--white-color);
+          background-color: var(--primary-color);
+        }
+      }
     }
   }
 }
