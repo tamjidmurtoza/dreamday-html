@@ -36,10 +36,6 @@
   $(window).on("load", function () {
     preloader();
   });
-  $(window).on("scroll", function () {
-    stickyHeader();
-    showScrollUp();
-  });
 
   $(function () {
     stickyHeader();
@@ -58,12 +54,18 @@
       $(".cs_getting_year").text(date.getFullYear());
     }
   });
+
+  $(window).on("scroll", function () {
+    stickyHeader();
+    showScrollUp();
+  });
+
   // Run on window resize
   $(window).on("resize", function () {
     const mobileWidth = 1199;
     if ($(window).width() >= mobileWidth) {
       $(
-        ".cs_site_header_style_1,.cs_menu_toggle,.cs_nav_list_wrap"
+        ".cs_site_header_style_1,.cs_menu_toggle,.cs_nav_list_wrap",
       ).removeClass("active");
     }
   });
@@ -80,7 +82,7 @@
   function mainNav() {
     $(".cs_nav").append('<span class="cs_menu_toggle"><span></span></span>');
     $(".menu-item-has-children").append(
-      '<span class="cs_menu_dropdown_toggle"><span></span></span>'
+      '<span class="cs_menu_dropdown_toggle"><span></span></span>',
     );
     $(".cs_menu_toggle").on("click", function () {
       $(this)
@@ -133,7 +135,7 @@
       // Read data attributes
       let autoPlayVar =
         parseInt(container.getAttribute("data-autoplay"), 10) || 0;
-      let autoplaySpdVar = 6000; // default like your example
+      let autoplaySpdVar = 6000;
       if (autoPlayVar > 1) {
         autoplaySpdVar = autoPlayVar;
         autoPlayVar = 1;
@@ -142,10 +144,10 @@
       const speedVar =
         parseInt(container.getAttribute("data-speed"), 10) || 600;
       const loopVar = Boolean(
-        parseInt(container.getAttribute("data-loop"), 10)
+        parseInt(container.getAttribute("data-loop"), 10),
       );
       const centerVar = Boolean(
-        parseInt(container.getAttribute("data-center"), 10)
+        parseInt(container.getAttribute("data-center"), 10),
       );
       const fadeVar = parseInt(container.getAttribute("data-fade-slide")) === 1;
 
@@ -298,7 +300,7 @@
           $("html").removeClass("overflow-hidden");
           $(".cs_video_popup_container iframe").attr("src", "about:blank");
           e.preventDefault();
-        }
+        },
       );
     }
   }
@@ -325,26 +327,26 @@
     08. Counter Animation
   =============================================================*/
   function counterInit() {
-    if ($(".odometer").length > 0) {
-      let triggered = [];
+    if (!$.exists(".odometer")) return;
 
-      $(window).on("scroll.counterInit", function () {
-        let scrollPos = $(window).scrollTop(),
-          winHeight = $(window).height(),
-          scrollPosition = Math.round(scrollPos + winHeight / 1.2);
-
-        $(".odometer").each(function (index) {
-          let $this = $(this);
-          let elemOffset = $this.offset().top;
-
-          // Run only once per element
-          if (elemOffset < scrollPosition && !triggered[index]) {
-            $this.html($this.data("count-to"));
-            triggered[index] = true;
+    const observer = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const el = $(entry.target);
+            el.html(el.data("count-to"));
+            observer.unobserve(entry.target);
           }
         });
-      });
-    }
+      },
+      {
+        threshold: 0.3,
+      },
+    );
+
+    $(".odometer").each(function () {
+      observer.observe(this);
+    });
   }
   /*===========================================================
     09. Light Gallery
@@ -363,18 +365,38 @@
     10. Smooth Page Scroll
   =============================================================*/
   function smoothScroll() {
-    if (typeof Lenis !== "undefined") {
-      const lenis = new Lenis({
-        duration: 1.2,
-        smooth: true,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    if (typeof Lenis === "undefined") return;
+
+    // Reduced motion respect
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Prevent multiple init
+    if (window.lenisInstance) return;
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      smooth: true,
+      smoothTouch: false,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+    });
+
+    window.lenisInstance = lenis;
+
+    // GSAP + ScrollTrigger integration
+
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      lenis.on("scroll", ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
       });
 
+      gsap.ticker.lagSmoothing(0);
+    } else {
       function raf(time) {
         lenis.raf(time);
         requestAnimationFrame(raf);
       }
-
       requestAnimationFrame(raf);
     }
   }
@@ -434,7 +456,7 @@
         {
           scrollTop: 0,
         },
-        0
+        0,
       );
     });
   }

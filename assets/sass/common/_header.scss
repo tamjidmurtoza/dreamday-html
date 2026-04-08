@@ -10,10 +10,11 @@
   z-index: 999;
   font-size: 16px;
   font-weight: 400;
+  transition: all 0.3s ease;
 
   .cs_main_header_in {
-    height: 120px;
-    transition: all 0.4s ease;
+    height: 110px;
+    transition: all 0.3s ease;
   }
 
   .cs_site_brand {
@@ -37,7 +38,7 @@
     transition: all 0.4s ease;
 
     .cs_main_header_in {
-      height: 80px;
+      height: 90px;
     }
 
     &.cs_secondary_color {

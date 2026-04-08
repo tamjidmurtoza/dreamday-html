@@ -23,7 +23,6 @@
       display: block;
       padding-bottom: 16px;
       background: transparent;
-      color: var(--secondary-color);
       border-bottom: 1px solid var(--primary-color);
 
       &::placeholder {
@@ -70,6 +69,7 @@
   .cs_newsletter_form {
 
     input {
+      color: var(--secondary-color);
       border-color: var(--secondary-color);
     }
   }

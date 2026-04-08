@@ -206,9 +206,6 @@
 
     .cs_card_details {
       width: 100%;
-      margin-top: 30px;
-      padding: 30px 30px 40px;
-      margin-left: initial;
 
       .cs_card_title {
         margin-bottom: 16px;
@@ -223,12 +220,6 @@
       }
     }
   }
-
-  @media (max-width: 575px) {
-    .cs_card_details {
-      padding: 30px 15px 34px;
-    }
-  }
 }
 
 .cs_card_style_3 {
@@ -239,6 +230,20 @@
 
     &::after {
       left: 45px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cs_card_details {
+      margin-top: 30px;
+      padding: 30px 30px 40px;
+      margin-left: initial;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs_card_details {
+      padding: 30px 15px 40px;
     }
   }
 }
@@ -254,6 +259,20 @@
 
     &::after {
       right: 45px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cs_card_details {
+      margin-top: 30px;
+      padding: 30px 30px 40px;
+      margin-right: initial;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs_card_details {
+      padding: 30px 15px 40px;
     }
   }
 }

@@ -27,6 +27,12 @@
     left: 0;
   }
 
+  .cs_section_title {
+    span {
+      font-weight: 700;
+    }
+  }
+
   .cs_about_details_text {
     display: flex;
     justify-content: space-between;
@@ -122,6 +128,10 @@
     .cs_section_title {
       position: relative;
       z-index: 10;
+
+      span {
+        font-weight: 700;
+      }
     }
 
     .cs_about_details_text {
@@ -266,6 +276,12 @@
   .cs_about_details {
     width: min(100%, 1050px);
     margin: 0 auto;
+
+    h2 {
+      span {
+        font-weight: 700;
+      }
+    }
   }
 
   @media (max-width:991px) {
