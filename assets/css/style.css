@@ -1952,6 +1952,9 @@ label {
   align-items: center;
   justify-content: space-between;
 }
+.cs_site_header_style_1 .cs_nav_list li.active {
+  font-weight: 700;
+}
 .cs_site_header_style_1.cs_sticky_active {
   color: var(--primary-color);
   background-color: var(--white-color);
