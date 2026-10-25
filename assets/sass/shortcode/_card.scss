@@ -22,6 +22,9 @@
   }
 
   .cs_card_title {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    line-height: 1.2em;
     position: absolute;
     bottom: 24px;
     left: 50%;
@@ -143,7 +146,7 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
-    border: 16px solid var(--white-color);
+    border: 16px solid var(--surface-color);
 
     img {
       display: block;
@@ -224,12 +227,12 @@
 
 .cs_card_style_3 {
   .cs_card_details {
-    margin-left: auto;
+    margin-inline-start: auto;
     padding: 56px;
-    padding-left: 29%;
+    padding-inline-start: 29%;
 
     &::after {
-      left: 45px;
+      inset-inline-start: 45px;
     }
   }
 
@@ -237,7 +240,7 @@
     .cs_card_details {
       margin-top: 30px;
       padding: 30px 30px 40px;
-      margin-left: initial;
+      margin-inline-start: initial;
     }
   }
 
@@ -250,15 +253,15 @@
 
 .cs_card_style_4 {
   .cs_card_thumbnail {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 
   .cs_card_details {
     padding: 56px;
-    padding-right: 29%;
+    padding-inline-end: 29%;
 
     &::after {
-      right: 45px;
+      inset-inline-end: 45px;
     }
   }
 
@@ -266,7 +269,7 @@
     .cs_card_details {
       margin-top: 30px;
       padding: 30px 30px 40px;
-      margin-right: initial;
+      margin-inline-end: initial;
     }
   }
 
@@ -307,7 +310,7 @@
         width: 100%;
         height: 1px;
         position: absolute;
-        left: 0;
+        inset-inline-start: 0;
         bottom: 0;
         opacity: 0.3;
         transition: all 0.4s ease;
@@ -337,7 +340,7 @@
 
     p {
       &:first-child {
-        opacity: 0.5;
+        opacity: 0.88;
       }
     }
   }
@@ -358,24 +361,24 @@
   }
 
   &:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--brand-color);
+    color: var(--on-brand-color);
 
     .cs_section_title {
-      color: var(--secondary-color);
+      color: var(--on-brand-color);
     }
 
     .cs_card_feature_list {
       li {
         &::before {
-          background-color: var(--secondary-color);
+          background-color: var(--on-brand-color);
         }
       }
     }
 
     .cs_btn_style_1 {
-      background-color: var(--secondary-color);
-      color: var(--primary-color);
+      background-color: var(--light-fixed-color);
+      color: var(--dark-fixed-color);
 
       &:hover span {
         transform: translateY(-50px);
@@ -396,7 +399,7 @@
   .cs_card_details {
     width: 74%;
     min-height: 585px;
-    margin-left: auto;
+    margin-inline-start: auto;
     margin-top: -31%;
     position: relative;
     display: flex;
@@ -411,7 +414,7 @@
     .cs_card_icon {
       position: absolute;
       top: 64px;
-      right: 64px;
+      inset-inline-end: 64px;
     }
   }
 
@@ -466,7 +469,7 @@
       margin-top: -34%;
 
       .cs_card_icon {
-        right: 20px;
+        inset-inline-end: 20px;
       }
     }
   }
@@ -507,7 +510,7 @@
       gap: 15px !important;
 
       ol {
-        padding-left: 20px !important;
+        padding-inline-start: 20px !important;
       }
     }
   }
@@ -518,7 +521,7 @@
 
   .cs_card_thumbnail {
     width: 63%;
-    margin-left: auto;
+    margin-inline-start: auto;
     position: relative;
     z-index: 1;
 
@@ -531,9 +534,10 @@
   .cs_card_details {
     width: 66%;
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     top: 0;
-    padding: 56px 37% 56px 56px;
+    padding-block: 56px;
+    padding-inline: 56px 37%;
     background-color: var(--gray-color);
   }
 
@@ -543,7 +547,8 @@
     }
 
     .cs_card_details {
-      padding: 30px 28% 30px 30px;
+      padding-block: 30px;
+      padding-inline: 30px 28%;
     }
   }
 

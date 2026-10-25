@@ -19,14 +19,13 @@
     input {
       flex: 1;
       border: 0;
-      outline: 0;
       display: block;
       padding-bottom: 16px;
       background: transparent;
       border-bottom: 1px solid var(--primary-color);
 
       &::placeholder {
-        opacity: 0.75;
+        opacity: 0.9;
       }
     }
   }
@@ -69,13 +68,18 @@
   .cs_newsletter_form {
 
     input {
-      color: var(--secondary-color);
-      border-color: var(--secondary-color);
+      color: var(--light-fixed-color);
+      border-color: var(--light-fixed-color);
+
+      &::placeholder {
+        color: inherit;
+        opacity: 0.8;
+      }
     }
   }
 
   .cs_btn_style_1 {
-    color: var(--primary-color);
+    color: var(--dark-fixed-color);
 
     span {
       display: inline-block;

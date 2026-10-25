@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8">
+    <!-- Applies saved theme (light/dark) and direction (RTL) before the page is drawn -->
+    <script src="assets/js/theme-init.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DreamDay - Wedding Planner Website HTML Template">
+    <meta name="description" content="DreamDay helps couples plan unforgettable weddings: venues, catering, decor, attire, music and photography in one place.">
     <meta name="keywords" content="wedding planner, wedding website template, dream wedding, wedding organizer, marriage planning, bridal template, wedding RSVP, couple website">
     <meta name="author" content="Laralink">
     <!-- Favicon -->
     <link rel="icon" href="assets/img/favicon.png">
     <!-- All CSS Files -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/aos.min.css">
     <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.min.css">
-    <link rel="stylesheet" href="assets/css/lightgallery.min.css">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Site Title -->
     <title>DreamDay - Wedding Planner Website HTML Template</title>
   </head>
   <body>
+    <a class="cs_skip_link" href="#main">Skip to main content</a>
     <!-- Preloader Start -->
-    <div class="cs_preloader cs_center">
+    <div class="cs_preloader cs_center" aria-hidden="true">
       <div class="cs_preloader_in">
         <div class="cs_center_column text-center">
           <div class="cs_preloader_icon cs_center cs_fs_40 cs_mb_20"><i class="fa-regular fa-heart"></i></div>
@@ -36,8 +39,8 @@
         <div class="container">
           <div class="cs_main_header_in">
             <div class="cs_main_header_left">
-              <a href="index.html" aria-label="Log with home page link" class="cs_site_brand">
-              <img src="assets/img/logo.svg" alt="Logo">
+              <a href="index.html" class="cs_site_brand">
+              <img src="assets/img/logo.svg" alt="DreamDay" width="167" height="20">
               </a>
             </div>
             <div class="cs_main_header_center">
@@ -45,12 +48,12 @@
                 <div class="cs_nav_list_wrap">
                   <div class="cs_nav_links_wrap">
                     <ul class="cs_nav_list cs_mp_0">
-                      <li><a href="about.html" aria-label="About page link">about</a></li>
-                      <li><a href="services.html" aria-label="Services page link">Services</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="services.html">Services</a></li>
                     </ul>
                     <ul class="cs_nav_list cs_mp_0">
-                      <li><a href="packages.html" aria-label="Packages page link">Packages</a></li>
-                      <li><a href="contact.html" aria-label="Contact page link">Contact</a></li>
+                      <li><a href="packages.html">Packages</a></li>
+                      <li><a href="contact.html">Contact</a></li>
                     </ul>
                   </div>
                 </div>
@@ -62,16 +65,16 @@
     </header>
     <!-- End Header Section -->
     <!-- Start Main Content -->
-    <main>
+    <main id="main">
     <!-- Start Hero Section -->
-    <section class="cs_hero_style_1 cs_bg_filed position-relative" data-src="assets/img/Hero_Section_filled.jpg">
+    <section class="cs_hero_style_1 cs_bg_filled position-relative" data-src="assets/img/hero_home.webp">
       <div class="cs_overlay"></div>
       <div class="container position-relative z-2">
         <div class="cs_hero_content cs_center_column text-center">
           <div class="cs_hero_text">
             <h1 class="cs_hero_title cs_fs_64 cs_secondary_color cs_mb_12" data-aos="fade-down">TURNING YOUR WEDDING DREAMS INTO ULTIMATE REALITY</h1>
             <p class="cs_secondary_color cs_mb_32">Crafting every detail to shape your perfect wedding day.</p>
-            <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1"><span>Get Started</span>
+            <a href="contact.html" class="cs_btn_style_1"><span>Get Started</span>
             </a>
           </div>
         </div>
@@ -82,9 +85,9 @@
     <section class="cs_about_style_1">
       <div class="container">
         <span class="cs_flower_shape cs_center">
-        <img src="assets/img/flower.svg" alt="flower">
+        <img src="assets/img/flower.svg" alt="Decorative flower" width="138" height="98" loading="lazy" decoding="async">
         </span>
-        <div class="cs_horizental"></div>
+        <div class="cs_horizontal"></div>
         <div class="cs_about_details">
           <h2 class="cs_section_title cs_fs_40 cs_normal text-center mb-0" data-aos="fade-down">WE ARE <span>PASSIONATE</span> ABOUT UNLEASHING ONLY
             <br> THE BEST WEDDINGS, WITH YEARS OF <span>EXPERIENCE</span> <br>
@@ -103,11 +106,11 @@
               <div class="col-lg-4">
                 <div class="cs_about_details_img_left">
                   <div class="cs_img_border" data-aos="fade-down">
-                    <img src="assets/img/about_1.jpg" alt="about">
+                    <img src="assets/img/about_1.webp" alt="Bride holding a bouquet" width="387" height="590" loading="lazy" decoding="async">
                   </div>
                   <div class="cs_section_heading_style_1">
                     <h3 class="cs_section_title cs_fs_40 cs_mb_16 cs_normal text-uppercase">For Your</h3>
-                    <img src="assets/img/logo3.svg" alt="Logo">
+                    <img src="assets/img/logo3.svg" alt="DreamDay" width="302" height="36" loading="lazy" decoding="async">
                   </div>
                 </div>
               </div>
@@ -116,11 +119,11 @@
                   <div class="cs_signature">
                     <div class="cs_mb_16">With love</div>
                     <span>
-                    <img src="assets/img/signature.svg" alt="signature">
+                    <img src="assets/img/signature.svg" alt="Dreamday signature" width="173" height="84" loading="lazy" decoding="async">
                     </span>
                   </div>
                   <div class="cs_img_border" data-aos="fade-up">
-                    <img src="assets/img/about_2.jpg" alt="about">
+                    <img src="assets/img/about_2.webp" alt="Couple at their wedding ceremony" width="813" height="599" loading="lazy" decoding="async">
                   </div>
                 </div>
               </div>
@@ -143,108 +146,108 @@
           <div class="col-lg-4 col-md-6">
             <div class="cs_card_style_1 position-relative">
               <div class="cs_card_thumbnail">
-                <img src="assets/img/card_1.png" alt="card img">
+                <img src="assets/img/card_1.webp" alt="Wedding venue" width="387" height="462" loading="lazy" decoding="async">
               </div>
-              <h3 class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0">Venue</h3>
+              <p class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0" aria-hidden="true">Venue</p>
               <div class="cs_card_details cs_center_column text-center">
                 <span class="cs_card_icon cs_center cs_mb_16">
-                <img src="assets/img/media_icon.svg" alt="media_icon">
+                <img src="assets/img/media_icon.svg" alt="Venue service icon" width="65" height="64" loading="lazy" decoding="async">
                 </span>
                 <h3 class="cs_fs_40 cs_semibold text-uppercase cs_mb_8">Venue</h3>
                 <p class="cs_fs_16 text-center">Capture every moment with the artistry of our talented
                   on-site photographers & videographers.
                 </p>
-                <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+                <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="cs_card_style_1 position-relative">
               <div class="cs_card_thumbnail">
-                <img src="assets/img/card_2.png" alt="card img">
+                <img src="assets/img/card_2.webp" alt="Wedding catering" width="386" height="462" loading="lazy" decoding="async">
               </div>
-              <h3 class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0">Catering</h3>
+              <p class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0" aria-hidden="true">Catering</p>
               <div class="cs_card_details cs_center_column text-center">
                 <span class="cs_card_icon cs_center cs_mb_16">
-                <img src="assets/img/media_icon.svg" alt="camera">
+                <img src="assets/img/media_icon.svg" alt="Catering service icon" width="65" height="64" loading="lazy" decoding="async">
                 </span>
                 <h3 class="cs_fs_40 cs_semibold text-uppercase cs_mb_8">Catering</h3>
                 <p class="cs_fs_16 text-center">Capture every moment with the artistry of our talented
                   on-site photographers & videographers.
                 </p>
-                <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+                <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="cs_card_style_1 position-relative">
               <div class="cs_card_thumbnail">
-                <img src="assets/img/card_3.png" alt="card img">
+                <img src="assets/img/card_3.webp" alt="Wedding decor" width="387" height="462" loading="lazy" decoding="async">
               </div>
-              <h3 class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0">Decor</h3>
+              <p class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0" aria-hidden="true">Decor</p>
               <div class="cs_card_details cs_center_column text-center">
                 <span class="cs_card_icon cs_center cs_mb_16">
-                <img src="assets/img/media_icon.svg" alt="camera">
+                <img src="assets/img/media_icon.svg" alt="Decor service icon" width="65" height="64" loading="lazy" decoding="async">
                 </span>
                 <h3 class="cs_fs_40 cs_semibold text-uppercase cs_mb_8">Decor</h3>
                 <p class="cs_fs_16 text-center">Capture every moment with the artistry of our talented
                   on-site photographers & videographers.
                 </p>
-                <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+                <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="cs_card_style_1 position-relative">
               <div class="cs_card_thumbnail">
-                <img src="assets/img/card_4.png" alt="card img">
+                <img src="assets/img/card_4.webp" alt="Wedding attire" width="387" height="462" loading="lazy" decoding="async">
               </div>
-              <h3 class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0">Attire</h3>
+              <p class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0" aria-hidden="true">Attire</p>
               <div class="cs_card_details cs_center_column text-center">
                 <span class="cs_card_icon cs_center cs_mb_16">
-                <img src="assets/img/media_icon.svg" alt="media_icon">
+                <img src="assets/img/media_icon.svg" alt="Attire service icon" width="65" height="64" loading="lazy" decoding="async">
                 </span>
                 <h3 class="cs_fs_40 cs_semibold text-uppercase cs_mb_8">Attire</h3>
                 <p class="cs_fs_16 text-center">Capture every moment with the artistry of our talented
                   on-site photographers & videographers.
                 </p>
-                <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+                <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="cs_card_style_1 position-relative">
               <div class="cs_card_thumbnail">
-                <img src="assets/img/card_1.png" alt="card img">
+                <img src="assets/img/card_1.webp" alt="Wedding media" width="387" height="462" loading="lazy" decoding="async">
               </div>
-              <h3 class="cs_card_title cs_fs_40 cs_semibold cs_white_color  text-uppercase mb-0">Media</h3>
+              <p class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0" aria-hidden="true">Media</p>
               <div class="cs_card_details cs_center_column text-center">
                 <span class="cs_card_icon cs_center cs_mb_16">
-                <img src="assets/img/media_icon.svg" alt="camera">
+                <img src="assets/img/media_icon.svg" alt="Media service icon" width="65" height="64" loading="lazy" decoding="async">
                 </span>
                 <h3 class="cs_fs_40 cs_semibold  text-uppercase cs_mb_8">Media</h3>
                 <p class="cs_fs_16 text-center">Capture every moment with the artistry of our talented
                   on-site photographers & videographers.
                 </p>
-                <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+                <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="cs_card_style_1 position-relative">
               <div class="cs_card_thumbnail">
-                <img src="assets/img/card_5.png" alt="card img">
+                <img src="assets/img/card_5.webp" alt="Wedding music" width="386" height="462" loading="lazy" decoding="async">
               </div>
-              <h3 class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0">Music</h3>
+              <p class="cs_card_title cs_fs_40 cs_semibold cs_white_color text-uppercase mb-0" aria-hidden="true">Music</p>
               <div class="cs_card_details cs_center_column text-center">
                 <span class="cs_card_icon cs_center cs_mb_16">
-                <img src="assets/img/media_icon.svg" alt="camera">
+                <img src="assets/img/media_icon.svg" alt="Music service icon" width="65" height="64" loading="lazy" decoding="async">
                 </span>
                 <h3 class="cs_fs_40 cs_semibold text-uppercase cs_mb_8">Music</h3>
                 <p class="cs_fs_16 text-center">Capture every moment with the artistry of our talented
                   on-site photographers & videographers.
                 </p>
-                <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+                <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
               </div>
             </div>
           </div>
@@ -261,7 +264,7 @@
           <div class="cs_gallery_left">
             <div class="cs_height_72 cs_height_lg_30"></div>
             <div class="cs_gallery_left_img cs_img_border" data-aos="zoom-in">
-              <img src="assets/img/gallery_img_1.jpg" alt="Wedding Gallery">
+              <img src="assets/img/gallery_img_1.webp" alt="Bride and groom portrait" width="550" height="656" loading="lazy" decoding="async">
             </div>
             <div class="cs_height_46 cs_height_lg_30"></div>
             <div class="cs_wedding_info">
@@ -277,12 +280,12 @@
                 </h2>
               </div>
               <div class="cs_gallery_right_top_img cs_img_border">
-                <img src="assets/img/gallery_img_2.jpg" alt="Wedding gallery">
+                <img src="assets/img/gallery_img_2.webp" alt="Wedding ceremony details" width="256" height="440" loading="lazy" decoding="async">
               </div>
             </div>
             <div class="cs_height_72 cs_height_lg_30"></div>
             <div class="cs_gallery_right_bottom cs_img_border" data-aos="fade-up">
-              <img src="assets/img/gallery_img_3.jpg" alt="Wedding gallery">
+              <img src="assets/img/gallery_img_3.webp" alt="Couple celebrating their wedding" width="618" height="468" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -314,10 +317,10 @@
                 <li>Free wedding consultation</li>
               </ul>
               <div class="cs_price">
-                <p class="cs_fs_16 mb-0">Start form</p>
+                <p class="cs_fs_16 mb-0">Starting from</p>
                 <p class="cs_fs_40 cs_bold cs_primary_font mb-0">$5,000</p>
               </div>
-              <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+              <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
@@ -331,13 +334,13 @@
                 <li>Premium Venue selection</li>
                 <li>Wedding day coordination</li>
                 <li>Free floral arrangements</li>
-                <li>Free cateting & photography</li>
+                <li>Free catering & photography</li>
               </ul>
               <div class="cs_price">
-                <p class="cs_fs_16 mb-0">Start form</p>
+                <p class="cs_fs_16 mb-0">Starting from</p>
                 <p class="cs_fs_40 cs_bold cs_primary_font mb-0">$8,500</p>
               </div>
-              <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+              <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
@@ -354,10 +357,10 @@
                 <li>Free wedding consultation</li>
               </ul>
               <div class="cs_price">
-                <p class="cs_fs_16 mb-0">Start form</p>
+                <p class="cs_fs_16 mb-0">Starting from</p>
                 <p class="cs_fs_40 cs_bold cs_primary_font mb-0">$12,000</p>
               </div>
-              <a href="contact.html" aria-label="Contact page link" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
+              <a href="contact.html" class="cs_btn_style_1 cs_brown w-100"><span>Book Now</span></a>
             </div>
           </div>
         </div>
@@ -367,12 +370,12 @@
     <!-- End Package Section -->
     <!-- Start Testimonial Section -->
     <div class="cs_height_120 cs_height_lg_80"></div>
-    <div class="container">
+    <div class="container" id="testimonials">
       <div class="cs_slider cs_style_1 position-relative">
         <div class="row cs_padding_0">
           <div class="col-lg-6 order-lg-2">
             <div class="cs_testimonial_img cs_img_border" data-aos="fade-right">
-              <img src="assets/img/testimonial_1.jpg" alt="testimonial">                
+              <img src="assets/img/testimonial_1.webp" alt="Happy couple on their wedding day" width="618" height="688" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="col-lg-6">
@@ -382,9 +385,9 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="cs_testimonial_style_1">
-                    <div class="cs_testimonal_header">
+                    <div class="cs_testimonial_header">
                       <div class="cs_header_icon">
-                        <img src="assets/img/testimonial_avatar.svg" alt="Avatar">
+                        <img src="assets/img/testimonial_avatar.svg" alt="Ruffus Anderson and Claurina Hazel avatar" width="104" height="132" loading="lazy" decoding="async">
                       </div>
                       <div class="cs_header_info text-end">
                         <p class="mb-0">Ruffus Anderson & Claurina Hazel</p>
@@ -396,9 +399,9 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="cs_testimonial_style_1">
-                    <div class="cs_testimonal_header">
+                    <div class="cs_testimonial_header">
                       <div class="cs_header_icon">
-                        <img src="assets/img/testimonial_avatar.svg" alt="Avatar">
+                        <img src="assets/img/testimonial_avatar.svg" alt="Ruffus Anderson and Claurina Hazel avatar" width="104" height="132" loading="lazy" decoding="async">
                       </div>
                       <div class="cs_header_info text-end">
                         <p class="mb-0">Ruffus Anderson & Claurina Hazel</p>
@@ -411,20 +414,20 @@
               </div>
               <div class="cs_height_0 cs_height_lg_40"></div>
               <div class="cs_slider_arrows cs_style_1">
-                <span class="cs_left_arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22"
+                <button type="button" class="cs_left_arrow" aria-label="Previous testimonial">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" aria-hidden="true" focusable="false" viewBox="0 0 12 22"
                     fill="none">
                     <path d="M-6.19888e-05 10.9999C-6.19888e-05 11.2557 0.0976877 11.5117 0.292937 11.7069L10.2929 21.7069C10.6837 22.0977 11.3164 22.0977 11.7069 21.7069C12.0974 21.3162 12.0977 20.6834 11.7069 20.2929L2.41394 10.9999L11.7069 1.70694C12.0977 1.31619 12.0977 0.683435 11.7069 0.292936C11.3162 -0.0975628 10.6834 -0.0978146 10.2929 0.292936L0.292937 10.2929C0.0976877 10.4882 -6.19888e-05 10.7442 -6.19888e-05 10.9999Z"
                       fill="currentColor" />
                   </svg>
-                </span>
-                <span class="cs_right_arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22"
+                </button>
+                <button type="button" class="cs_right_arrow" aria-label="Next testimonial">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" aria-hidden="true" focusable="false" viewBox="0 0 12 22"
                     fill="none">
                     <path d="M12.0001 10.9999C12.0001 11.2557 11.9023 11.5117 11.7071 11.7069L1.70706 21.7069C1.31631 22.0977 0.683563 22.0977 0.293063 21.7069C-0.0974375 21.3162 -0.0976875 20.6834 0.293063 20.2929L9.58606 10.9999L0.293063 1.70694C-0.0976875 1.31619 -0.0976875 0.683435 0.293063 0.292936C0.683812 -0.0975628 1.31656 -0.0978146 1.70706 0.292936L11.7071 10.2929C11.9023 10.4882 12.0001 10.7442 12.0001 10.9999Z"
                       fill="currentColor" />
                   </svg>
-                </span>
+                </button>
               </div>
             </div>
           </div>
@@ -433,18 +436,18 @@
     </div>
     <div class="cs_height_120 cs_height_lg_80"></div>
     <!-- End Testimonial Section -->
-    <!-- End Newsletter Section -->
-    <div class="cs_newsletter_style_1 cs_bg_filed position-relative" data-src="assets/img/newsletter_bg.svg">
+    <!-- Start Newsletter Section -->
+    <div class="cs_newsletter_style_1 cs_bg_filled position-relative" data-src="assets/img/newsletter_bg.svg">
       <div class="container">
         <div class="cs_newsletter_text cs_center_column">
           <p class="text-center cs_mb_36 cs_mb_lg_30">Stay in the loop with the latest trends, tips, and exclusive offers. Subscribe to our newsletter and be the first to know about upcoming DREAMDAY events and promotions.</p>
           <form action="#" class="cs_newsletter_form cs_center">
-            <input type="email" name="email" placeholder="Enter your email address..." autocomplete="email" required>
+            <input type="email" name="email" aria-label="Email address" placeholder="Enter your email address..." autocomplete="email" required>
             <button type="submit" class="cs_btn_style_1 cs_brown" data-aos="zoom-in"><span>Subscribe</span></button>
           </form>
         </div>
         <span class="cs_newsletter_flower cs_center">
-        <img src="assets/img/flower_2.svg" alt="flower">
+        <img src="assets/img/flower_2.svg" alt="Decorative flower" width="396" height="192" loading="lazy" decoding="async">
         </span>
       </div>
     </div>
@@ -463,65 +466,61 @@
                   WHO <span>realizes </span>YOUR DREAM WEDDING<span> ceremony</span>.
                 </h2>
                 <div class="cs_social_links">
-                  <a href="#" aria-label="Social link">TW</a>
-                  <a href="#" aria-label="Social link">FW</a>
-                  <a href="#" aria-label="Social link">IG</a>
+                  <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="DreamDay on X (Twitter)">TW</a>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="DreamDay on Facebook">FB</a>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="DreamDay on Instagram">IG</a>
                 </div>
               </div>
             </div>
             <div class="cs_footer_col">
               <h3 class="cs_footer_widget_title">About</h3>
               <ul class="cs_footer_menu">
-                <li><a href="about.html" aria-label="Footer nav link">About Us</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Our Story</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Testimonials</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Blog</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Faq</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Careers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html#team">Our Team</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="service-details.html#faq">FAQ</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
               </ul>
             </div>
             <div class="cs_footer_col">
               <h3 class="cs_footer_widget_title">Service</h3>
               <ul class="cs_footer_menu">
-                <li><a href="service-details.html" aria-label="Footer nav link">Venue</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Catering</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Decoration</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Band Music</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Atire & Gowns</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Photo & Video</a></li>
+                <li><a href="service-details.html">Venue</a></li>
+                <li><a href="service-details.html">Catering</a></li>
+                <li><a href="service-details.html">Decoration</a></li>
+                <li><a href="service-details.html">Band Music</a></li>
+                <li><a href="service-details.html">Attire & Gowns</a></li>
+                <li><a href="service-details.html">Photo & Video</a></li>
               </ul>
             </div>
             <div class="cs_footer_col">
               <h3 class="cs_footer_widget_title">Contact</h3>
               <ul class="cs_footer_menu">
-                <li><a href="contact.html" aria-label="Footer nav link">Phone Number</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Email Address</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Our Location</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Social Media</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">User Policy</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Client Support</a></li>
+                <li><a href="tel:+15550123456">+1&nbsp;(555)&nbsp;012&#8209;3456</a></li>
+                <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+                <li><a href="contact.html#location">Our Location</a></li>
+                <li><a href="contact.html">Book a Consultation</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="cs_footer_bottom">
-          <p class="mb-0">Copyright &copy; <span class="cs_getting_year"></span>. All rights reserved.</p>
+          <p class="mb-0">Copyright &copy; <span class="cs_getting_year">2026</span> DreamDay. All rights reserved.</p>
           <ul class="cs_footer_bottom_menu cs_mp_0">
-            <li><a href="#" aria-label="Privacy link">Privacy Policy</a></li>
-            <li><a href="#" aria-label="Privacy link">Terms & Condition</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
       </div>
     </footer>
     <!-- End Footer Section -->
     <!-- Start Scroll Up Button -->
-    <button type="button" class="cs_scrolltop_btn cs_center rounded-circle">
-    <span><i class="fa-solid fa-chevron-up"></i></span>
+    <button type="button" class="cs_scrolltop_btn cs_center rounded-circle" aria-label="Scroll to top">
+      <span aria-hidden="true"><i class="fa-solid fa-chevron-up"></i></span>
     </button>
     <!-- End Scroll Up Button -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/lightgallery.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
     <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/lenis.min.js"></script>
     <script src="assets/js/aos.min.js"></script>

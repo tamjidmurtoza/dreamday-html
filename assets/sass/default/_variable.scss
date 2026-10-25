@@ -7,6 +7,26 @@
   --primary-color: #6C4E3F;
   --secondary-color: #FAF6F2;
   --gray-color: #F3EEE7;
+  --surface-color: #fff;
+  --surface-translucent: rgba(255, 255, 255, 0.8);
+  --brand-color: #6C4E3F;
+  --on-brand-color: #FAF6F2;
+  --light-fixed-color: #FAF6F2;
+  --dark-fixed-color: #6C4E3F;
+  --hover-strong-color: #000;
   --primary-font: "Cormorant Upright", sans-serif;
   --secondary-font: "Montserrat", sans-serif;
+}
+
+/*==========================================
+  Dark Theme Colors
+ ===========================================*/
+[data-theme="dark"] {
+  --primary-color: #E8D9CB;
+  --secondary-color: #16110E;
+  --gray-color: #211915;
+  --surface-color: #2A211C;
+  --surface-translucent: rgba(42, 33, 28, 0.88);
+  --hover-strong-color: #fff;
+  color-scheme: dark;
 }

@@ -5,7 +5,7 @@
 .cs_site_header_style_1 {
   position: fixed;
   top: 0;
-  left: 0;
+  inset-inline-start: 0;
   width: 100%;
   z-index: 999;
   font-size: 16px;
@@ -18,6 +18,9 @@
   }
 
   .cs_site_brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     position: relative;
     z-index: 99;
     transition: none;
@@ -39,7 +42,7 @@
 
   &.cs_sticky_active {
     color: var(--primary-color);
-    background-color: var(--white-color);
+    background-color: var(--surface-color);
     box-shadow: 0px 1px 4px 0px rgba(2, 0, 181, 0.1);
     transition: all 0.4s ease;
 
@@ -48,8 +51,8 @@
     }
 
     &.cs_secondary_color {
-      color: var(--white-color);
-      background-color: var(--primary-color);
+      color: var(--on-brand-color);
+      background-color: var(--brand-color);
     }
   }
 
@@ -82,7 +85,7 @@
               height: inherit;
 
               &:first-child {
-                margin-right: 190px;
+                margin-inline-end: 190px;
               }
 
               >a {
@@ -92,7 +95,7 @@
                 justify-content: center;
 
                 &:hover {
-                  opacity: 0.75;
+                  opacity: 0.85;
                 }
               }
             }
@@ -118,19 +121,22 @@
         position: absolute;
         top: 0;
         padding: 80px 0 40px 0;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
-        left: 0;
+        height: 100dvh;
+        inset-inline-start: 0;
         color: var(--primary-color);
-        background-color: var(--white-color);
+        background-color: var(--surface-color);
         transform: scale(0, 0);
         transform-origin: bottom right;
-        transition: transform 0.3s ease;
+        visibility: hidden;
+        transition: transform 0.3s ease, visibility 0s linear 0.3s;
 
         &.active {
           transform: scale(1, 1);
           transform-origin: top left;
-          transition: transform 0.6s ease;
+          visibility: visible;
+          transition: transform 0.6s ease, visibility 0s;
         }
 
         .cs_nav_links_wrap {
@@ -150,7 +156,7 @@
                 line-height: 16px;
 
                 &:hover {
-                  opacity: 0.75;
+                  opacity: 0.85;
                 }
               }
             }
@@ -166,8 +172,8 @@
     &.cs_secondary_color {
       .cs_nav {
         .cs_nav_list_wrap {
-          color: var(--white-color);
-          background-color: var(--primary-color);
+          color: var(--on-brand-color);
+          background-color: var(--brand-color);
         }
       }
     }
@@ -175,15 +181,20 @@
 }
 
 /*========================================================
- mobail menu
+ mobile menu
 ==========================================================*/
 .cs_menu_toggle {
   display: none;
-  width: 30px;
-  height: 27px;
+  width: 44px;
+  height: 44px;
+  padding: 8px 7px;
   position: absolute;
-  right: 12px;
-  top: 27px;
+  inset-inline-end: 5px;
+  top: 18px;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
 
   span,
   span::before,

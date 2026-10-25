@@ -9,7 +9,7 @@
     z-index: 2;
   }
 
-  .cs_horizental {
+  .cs_horizontal {
     margin: 32px auto;
     width: 1px;
     height: 200px;
@@ -24,7 +24,7 @@
     background-color: var(--gray-color);
     position: absolute;
     bottom: 0;
-    left: 0;
+    inset-inline-start: 0;
   }
 
   .cs_section_title {
@@ -56,7 +56,7 @@
       gap: 80px;
 
       .cs_signature {
-        padding-left: 27%;
+        padding-inline-start: 27%;
       }
     }
   }
@@ -74,7 +74,7 @@
       display: none;
     }
 
-    .cs_horizental {
+    .cs_horizontal {
       height: 100px;
     }
 
@@ -97,7 +97,8 @@
         gap: 40px;
 
         .cs_signature {
-          margin: 30px 0 0 auto;
+          margin: 30px 0 0;
+          margin-inline-start: auto;
         }
 
         .cs_img_border,
@@ -120,7 +121,7 @@
     height: 27%;
     width: 100%;
     position: absolute;
-    left: 0;
+    inset-inline-start: 0;
     bottom: 0;
   }
 
@@ -135,17 +136,17 @@
     }
 
     .cs_about_details_text {
-      padding-right: 37%;
+      padding-inline-end: 37%;
 
-      p:first-letter {
-        margin-left: 30px;
+      p {
+        text-indent: 30px;
       }
     }
 
     .cs_about_top_img {
       position: absolute;
       top: 102px;
-      right: 0;
+      inset-inline-end: 0;
     }
   }
 
@@ -155,20 +156,20 @@
     .cs_signature {
       position: absolute;
       top: 0;
-      left: 50%;
+      inset-inline-start: 50%;
     }
   }
 
   .cs_about_bottom {
     .cs_about_bottom_img {
-      padding-right: 60%;
+      padding-inline-end: 60%;
     }
   }
 
   .cs_counter_section {
     position: relative;
     z-index: 2;
-    padding-left: 50%;
+    padding-inline-start: 50%;
     margin-top: -115px;
 
     .cs_counter_style_1 {
@@ -186,29 +187,29 @@
 
   @media (max-width: 1399px) {
     .cs_about_top_img {
-      padding-left: 70%;
+      padding-inline-start: 70%;
     }
 
     .cs_counter_section {
-      padding-left: 48%;
+      padding-inline-start: 48%;
     }
   }
 
   @media (max-width: 1199px) {
     .cs_counter_section {
       margin-top: 0;
-      padding-left: 0;
+      padding-inline-start: 0;
     }
 
     .cs_about_bottom {
       .cs_about_bottom_img {
-        padding-right: 23%;
+        padding-inline-end: 23%;
         margin-bottom: 20px;
       }
 
       .cs_signature {
-        left: initial;
-        right: 0;
+        inset-inline-start: initial;
+        inset-inline-end: 0;
       }
     }
   }
@@ -218,7 +219,7 @@
     .cs_about_top {
       .cs_about_top_img {
         position: initial;
-        padding-left: 0;
+        padding-inline-start: 0;
         margin-top: 30px;
 
         img {
@@ -227,24 +228,24 @@
       }
 
       .cs_about_details_text {
-        padding-right: 0px;
+        padding-inline-end: 0px;
 
-        p:first-letter {
-          margin-left: 0;
+        p {
+          text-indent: 0;
         }
       }
     }
 
     .cs_about_bottom {
       .cs_about_bottom_img {
-        padding-right: 0%;
+        padding-inline-end: 0%;
         margin-bottom: 30px;
       }
 
       .cs_signature {
         position: initial;
         margin-bottom: 30px;
-        text-align: right;
+        text-align: end;
       }
     }
   }
@@ -265,11 +266,11 @@
     }
 
     &::before {
-      left: 0;
+      inset-inline-start: 0;
     }
 
     &::after {
-      right: 0;
+      inset-inline-end: 0;
     }
   }
 

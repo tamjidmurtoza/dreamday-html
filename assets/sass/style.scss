@@ -2,7 +2,7 @@
 >> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 01. Variable
-02. Typhography
+02. Typography
 03. Spacing
 04. General
 05. Header
@@ -17,32 +17,36 @@
 14. Testimonial
 15. Newsletter
 16. Service
-17. Accordian
+17. Accordion
 18. Team
 19. Contact
 20. Video Block
 21. Footer
+22. Legal & 404 Pages
+23. Theme Switcher, Dark Mode & RTL
 
 --------------------------------------------------------------*/
 
-@import 'default/variable';
-@import 'default/typography';
-@import 'common/spacing';
-@import 'common/general';
-@import 'common/header';
-@import 'common/slider';
-@import 'common/hero';
-@import 'common/video-modal';
-@import 'shortcode/about';
-@import 'shortcode/card';
-@import 'shortcode/iconbox';
-@import 'shortcode/achievement';
-@import 'shortcode/gallery';
-@import 'shortcode/testimonial';
-@import 'shortcode/newsletter';
-@import 'shortcode/service';
-@import 'shortcode/accordian';
-@import 'shortcode/team';
-@import 'shortcode/contact';
-@import 'shortcode/video-block';
-@import 'common/footer';
+@use 'default/variable';
+@use 'default/typography';
+@use 'common/spacing';
+@use 'common/general';
+@use 'common/header';
+@use 'common/slider';
+@use 'common/hero';
+@use 'common/video-modal';
+@use 'shortcode/about';
+@use 'shortcode/card';
+@use 'shortcode/iconbox';
+@use 'shortcode/achievement';
+@use 'shortcode/gallery';
+@use 'shortcode/testimonial';
+@use 'shortcode/newsletter';
+@use 'shortcode/service';
+@use 'shortcode/accordion';
+@use 'shortcode/team';
+@use 'shortcode/contact';
+@use 'shortcode/video-block';
+@use 'common/footer';
+@use 'shortcode/pages';
+@use 'common/theme';

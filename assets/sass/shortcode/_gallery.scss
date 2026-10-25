@@ -10,7 +10,7 @@
     width: 62%;
     height: 85%;
     background-color: var(--gray-color);
-    right: 0;
+    inset-inline-end: 0;
     position: absolute;
     z-index: 1;
   }
@@ -23,7 +23,7 @@
 
 .cs_gallery_style_1 {
   .cs_gallery_left {
-    padding-right: 72px;
+    padding-inline-end: 72px;
   }
 
   .cs_gallery_right_top {
@@ -58,12 +58,11 @@
         .cs_section_heading_style_1 {
           padding-top: 0;
         }
-
       }
     }
 
     .cs_gallery_left {
-      padding-right: 0;
+      padding-inline-end: 0;
     }
 
     .cs_gallery_left_img,
@@ -72,7 +71,6 @@
         width: 100%;
       }
     }
-
   }
 }
 
@@ -107,7 +105,7 @@
       padding: 12px 24px;
       position: absolute;
       top: 32px;
-      right: 32px;
+      inset-inline-end: 32px;
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.4s ease;

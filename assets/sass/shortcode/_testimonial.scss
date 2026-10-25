@@ -8,9 +8,9 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  background-color: rgba(255, 255, 255, 0.80);
+  background-color: var(--surface-translucent);
 
-  .cs_testimonal_header {
+  .cs_testimonial_header {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -58,13 +58,4 @@
   img {
     width: 100%;
   }
-
-  //   @media (max-width: 991px) {
-  //   .cs_testimonial_img {
-  //     flex-direction: column-reverse;
-  //     gap: 40px;
-  //     background-color: rgba(255, 255, 255, 0.80);
-  //   }
-
-  // }
 }

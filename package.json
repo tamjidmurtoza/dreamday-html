@@ -1,0 +1,15 @@
+{
+  "name": "dreamday-html",
+  "version": "1.0.0",
+  "description": "DreamDay - Wedding Planner Website HTML Template",
+  "author": "Laralink",
+  "private": true,
+  "scripts": {
+    "build:css": "sass --style=expanded --no-charset assets/sass/style.scss assets/css/style.css",
+    "watch:css": "sass --watch --style=expanded --no-charset assets/sass/style.scss assets/css/style.css",
+    "package": "node scripts/package.js"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

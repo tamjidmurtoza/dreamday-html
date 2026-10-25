@@ -16,7 +16,6 @@
     display: block;
     width: 100%;
     border: none;
-    outline: none;
     resize: none;
     padding: 14px 20px;
     background: transparent;
@@ -24,7 +23,7 @@
     border: 1px solid var(--primary-color);
 
     &::placeholder {
-      opacity: 0.75;
+      opacity: 0.9;
     }
   }
 
@@ -38,7 +37,6 @@
     margin: 0;
   }
 
-  /* Firefox */
   input[type=number] {
     -moz-appearance: textfield;
   }

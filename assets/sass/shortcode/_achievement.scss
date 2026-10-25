@@ -16,7 +16,7 @@
 
   .cs_achievement_left {
     position: relative;
-    padding-right: 50px;
+    padding-inline-end: 50px;
     z-index: 2;
 
     img {
@@ -30,7 +30,7 @@
 
   .cs_achievement_history {
     width: min(100%, 427px);
-    margin-left: auto;
+    margin-inline-start: auto;
 
     li {
       display: flex;
@@ -59,7 +59,7 @@
   @media (max-width: 1199px) {
 
     .cs_achievement_left {
-      padding-right: 0;
+      padding-inline-end: 0;
     }
 
     .cs_section_heading_style_1 {
@@ -78,7 +78,7 @@
 
     .cs_achievement_history {
       width: 100%;
-      margin-left: auto;
+      margin-inline-start: auto;
     }
   }
 }

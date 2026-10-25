@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Documentation for DreamDay, the wedding planner HTML template: setup, file structure, pages, components, light and dark mode, RTL, customization and support." />
+    <title>DreamDay – Documentation</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header class="topbar">
+      <a href="#introduction" class="brand"
+        ><img src="img/logo.svg" alt="DreamDay logo"
+      /></a>
+      <span class="version">v1.0.0</span>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-controls="doc-nav"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+        data-nav-toggle
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <!-- End Header -->
+
+    <div class="layout">
+      <!-- Start Sidebar -->
+      <nav id="doc-nav" class="sidebar" aria-label="Documentation">
+        <label class="nav-search">
+          <span class="sr-only">Search the documentation menu</span>
+          <input type="search" placeholder="Search topics…" autocomplete="off" data-nav-search />
+        </label>
+
+        <p class="nav-label">Getting started</p>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#file-structure">File Structure</a></li>
+          <li><a href="#getting-started">Installation</a></li>
+          <li><a href="#deployment">Deployment</a></li>
+        </ul>
+
+        <p class="nav-label">Template</p>
+        <ul>
+          <li><a href="#page-anatomy">Page Anatomy</a></li>
+          <li><a href="#pages">Pages</a></li>
+          <li><a href="#header">Header &amp; Menu</a></li>
+          <li><a href="#footer">Footer</a></li>
+        </ul>
+
+        <p class="nav-label">Customization</p>
+        <ul>
+          <li><a href="#colors">Colors &amp; Dark Mode</a></li>
+          <li><a href="#typography">Typography &amp; Fonts</a></li>
+          <li><a href="#icons">Icons</a></li>
+          <li><a href="#images">Logo &amp; Images</a></li>
+          <li><a href="#layout">Spacing &amp; Breakpoints</a></li>
+          <li><a href="#utilities">Buttons &amp; Forms</a></li>
+          <li><a href="#sass">Editing the SCSS</a></li>
+          <li><a href="#rtl">RTL Support</a></li>
+        </ul>
+
+        <p class="nav-label">JavaScript</p>
+        <ul>
+          <li><a href="#components">Components</a></li>
+          <li><a href="#page-effects">Page Effects</a></li>
+          <li><a href="#forms-js">Forms &amp; Map</a></li>
+        </ul>
+
+        <p class="nav-label">More</p>
+        <ul>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#browsers">Browser Support</a></li>
+          <li><a href="#troubleshooting">Troubleshooting</a></li>
+          <li><a href="#changelog">Changelog</a></li>
+          <li><a href="#credits">Credits</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+        <p class="nav-empty" hidden data-nav-empty>No matching topics.</p>
+      </nav>
+      <!-- End Sidebar -->
+
+      <main class="content">
+        <!-- ============ INTRODUCTION ============ -->
+        <section id="introduction">
+          <h1>DreamDay – Wedding Planner Website HTML Template</h1>
+          <p class="lead">
+            Thank you for purchasing DreamDay. This document explains how the
+            template is organised, how to edit its pages, and how to change its
+            colors, fonts, light and dark mode, text direction and behaviour.
+            Every section can be read on its own, so feel free to jump straight
+            to the topic you need.
+          </p>
+          <ul class="facts">
+            <li><strong>9</strong> HTML pages</li>
+            <li>Bootstrap 5</li>
+            <li>Vanilla JS (no jQuery)</li>
+            <li>SCSS source</li>
+            <li>RTL ready</li>
+            <li>Light &amp; dark mode</li>
+          </ul>
+          <dl class="meta">
+            <div><dt>Item name</dt><dd>DreamDay – Wedding Planner Website HTML Template</dd></div>
+            <div><dt>Version</dt><dd>1.0.0</dd></div>
+            <div><dt>Author</dt><dd>Laralink</dd></div>
+            <div><dt>Stack</dt><dd>HTML5, Bootstrap 5.3, SCSS, plain JavaScript</dd></div>
+          </dl>
+          <div class="callout tip">
+            <strong>No build step needed.</strong> Open any <code>.html</code>
+            file and edit the text and images directly. The compiled
+            <code>assets/css/style.css</code> is ready to use; the SCSS source is
+            included only if you prefer to work with it.
+          </div>
+        </section>
+
+        <!-- ============ FEATURES ============ -->
+        <section id="features">
+          <h2>Features</h2>
+          <ul class="feature-grid">
+            <li>
+              <strong>9 pages</strong>
+              <span>Home, About, Services, Service Details, Packages, Contact,
+                Privacy Policy, Terms &amp; Conditions and 404.</span>
+            </li>
+            <li>
+              <strong>Bootstrap 5.3</strong>
+              <span>Grid and utilities from Bootstrap, with the theme styles in
+                one <code>style.css</code>.</span>
+            </li>
+            <li>
+              <strong>Plain JavaScript</strong>
+              <span>One <code>main.js</code>, no jQuery. Every feature is a small,
+                commented function.</span>
+            </li>
+            <li>
+              <strong>Organised SCSS</strong>
+              <span>Partials per section, CSS custom properties for colors and
+                fonts, modern <code>@use</code> syntax.</span>
+            </li>
+            <li>
+              <strong>Fully responsive</strong>
+              <span>Layouts checked from 320px phones to large desktops.</span>
+            </li>
+            <li>
+              <strong>RTL from the same CSS</strong>
+              <span>Switch <code>dir="rtl"</code> and the whole layout mirrors.
+                No second stylesheet.</span>
+            </li>
+            <li>
+              <strong>Light &amp; dark mode</strong>
+              <span>Visitors pick Device, Light or Dark (and LTR / RTL) from a
+                small switcher on the side of every page.</span>
+            </li>
+            <li>
+              <strong>Working contact form</strong>
+              <span>Sends messages through Web3Forms, with no server code
+                needed.</span>
+            </li>
+            <li>
+              <strong>Sliders &amp; lightbox</strong>
+              <span>Swiper sliders set up with data attributes, and a GLightbox
+                image gallery.</span>
+            </li>
+            <li>
+              <strong>Animated counters</strong>
+              <span>Digits roll like a slot machine when the numbers scroll into
+                view.</span>
+            </li>
+            <li>
+              <strong>Scroll animations</strong>
+              <span>Headings and images fade in with AOS, and Lenis gives smooth
+                scrolling.</span>
+            </li>
+            <li>
+              <strong>Accessible markup</strong>
+              <span>Skip link, labelled controls, keyboard support and
+                reduced-motion support.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ============ REQUIREMENTS ============ -->
+        <section id="requirements">
+          <h2>Requirements</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">To…</th>
+                  <th scope="col">You need</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Edit the pages</th>
+                  <td>
+                    Any code editor, for example
+                    <a href="https://code.visualstudio.com" target="_blank" rel="noopener">VS Code</a>.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Preview the map, video and form</th>
+                  <td>
+                    A local server (for example the VS Code
+                    <strong>Live Server</strong> extension) or your web hosting.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Compile the SCSS (optional)</th>
+                  <td>
+                    <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>
+                    18 or newer, with npm.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout tip">
+            Basic knowledge of HTML and CSS is enough to customise the template.
+            You do not need to know Sass or JavaScript to edit content.
+          </div>
+        </section>
+
+        <!-- ============ FILE-STRUCTURE ============ -->
+        <section id="file-structure">
+          <h2>File Structure</h2>
+          <pre><code>template/
+├── index.html                Home
+├── about.html                About us, counters, team, gallery
+├── services.html             Services list
+├── service-details.html      Single service, gallery slider, FAQ
+├── packages.html             Pricing packages
+├── contact.html              Contact form and map
+├── privacy-policy.html
+├── terms-conditions.html
+├── 404.html                  Page not found
+├── package.json              Optional SCSS build scripts
+└── assets/
+    ├── css/
+    │   ├── style.css         Main theme styles (compiled from SCSS)
+    │   └── bootstrap, swiper, glightbox, aos, fontawesome (.min.css)
+    ├── sass/
+    │   ├── style.scss        Imports every partial below
+    │   ├── default/          _variable.scss (colors, fonts), _typography.scss
+    │   ├── common/           header, footer, hero, slider, spacing, theme …
+    │   └── shortcode/        page sections: about, card, gallery, team …
+    ├── js/
+    │   ├── main.js           Theme script: menu, sliders, counters, forms …
+    │   ├── theme-init.js     Applies saved theme and direction before paint
+    │   └── swiper, glightbox, lenis, aos (.min.js)
+    ├── fonts/                Font Awesome icon fonts
+    └── img/                  Images, icons and SVG ornaments</code></pre>
+          <div class="callout">
+            Class names start with <code>cs_</code> so they never clash with
+            Bootstrap. Section styles are named
+            <code>cs_&lt;section&gt;_style_&lt;N&gt;</code>: for example
+            <code>cs_hero_style_1</code> is the home hero and
+            <code>cs_hero_style_2</code> the inner-page hero. The number only
+            tells designs apart.
+          </div>
+        </section>
+
+        <!-- ============ GETTING-STARTED ============ -->
+        <section id="getting-started">
+          <h2>Installation</h2>
+          <ol class="steps">
+            <li>Unzip the download and open the <code>template</code> folder in your editor.</li>
+            <li>Open any <code>.html</code> file in your browser to preview it. For the map, video and contact form, start a local server, for example with the VS Code <strong>Live Server</strong> extension.</li>
+            <li>Edit the text and images in the HTML files. Colors and fonts are set once in <code>assets/css/style.css</code> (see <a href="#colors">Colors</a>).</li>
+            <li>Add your Web3Forms key to <code>contact.html</code> so the contact form can send messages (see <a href="#forms-js">Forms</a>).</li>
+          </ol>
+
+          <h3 id="npm-scripts">npm scripts (optional)</h3>
+          <p>Only needed if you edit the SCSS. Run <code>npm install</code> once in the template folder, then:</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+              <tbody>
+                <tr><td><code>npm run build:css</code></td><td>Compiles <code>assets/sass/style.scss</code> into <code>assets/css/style.css</code> once.</td></tr>
+                <tr><td><code>npm run watch:css</code></td><td>Recompiles <code>style.css</code> every time you save an SCSS file.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ DEPLOYMENT ============ -->
+        <section id="deployment">
+          <h2>Deployment</h2>
+          <p>
+            DreamDay is a static site, so it runs on any web host. Upload the
+            HTML files and the <code>assets/</code> folder to your server
+            (for example into <code>public_html/</code>) with FTP or your host's
+            file manager. No database or server language is needed.
+          </p>
+
+          <h3 id="build-before-upload">Compile the CSS before you upload</h3>
+          <p>
+            If you edited any <code>.scss</code> file, make sure
+            <code>assets/css/style.css</code> is up to date first, because the
+            browser only reads the CSS file. If you use the VS Code
+            <strong>Live Sass Compiler</strong> extension, it already compiles
+            on every save. If you don't have it installed, compile with npm:
+          </p>
+          <ol class="steps">
+            <li>Install <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> 18 or newer (once).</li>
+            <li>Open a terminal in the template folder and install the Sass compiler (once):
+              <div class="code"><pre><code>npm install</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+            </li>
+            <li>Build the CSS:
+              <div class="code"><pre><code>npm run build:css</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+              This writes the compiled styles to <code>assets/css/style.css</code>.
+            </li>
+            <li>Upload the files listed below.</li>
+          </ol>
+          <div class="callout tip">
+            If you only edited the HTML or <code>style.css</code> directly, skip
+            the build and upload right away.
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">File or folder</th><th scope="col">Upload?</th></tr></thead>
+              <tbody>
+                <tr><td><code>*.html</code>, <code>assets/css</code>, <code>assets/js</code>, <code>assets/fonts</code>, <code>assets/img</code></td><td>Yes</td></tr>
+                <tr><td><code>assets/sass/</code>, <code>package.json</code>, <code>package-lock.json</code>, <code>node_modules/</code></td><td>No, only used to compile the SCSS</td></tr>              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            All links between pages are relative (<code>about.html</code>,
+            <code>assets/img/…</code>), so the site also works from a sub-folder
+            such as <code>example.com/wedding/</code> without changes.
+          </div>
+        </section>
+
+        <!-- ============ PAGE-ANATOMY ============ -->
+        <section id="page-anatomy">
+          <h2>Page Anatomy</h2>
+          <p>
+            Every page follows the same order: the theme script in the
+            <code>&lt;head&gt;</code>, then the preloader, header, the page
+            sections inside <code>&lt;main&gt;</code>, the footer, the back-to-top
+            button and the scripts. Shortened:
+          </p>
+          <div class="code"><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" class="no-js"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;script src="assets/js/theme-init.js"&gt;&lt;/script&gt;
+    &lt;!-- meta, favicon, Google Fonts, CSS files --&gt;
+    &lt;title&gt;DreamDay - Wedding Planner Website HTML Template&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a class="cs_skip_link" href="#main"&gt;Skip to main content&lt;/a&gt;
+    &lt;div class="cs_preloader"&gt;…&lt;/div&gt;
+    &lt;header class="cs_site_header_style_1 cs_sticky_header"&gt;…&lt;/header&gt;
+    &lt;main id="main"&gt;
+      &lt;section class="cs_hero_style_1"&gt;…&lt;/section&gt;
+      &lt;section class="cs_about_style_1"&gt;…&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer class="cs_footer_style_1"&gt;…&lt;/footer&gt;
+    &lt;button class="cs_scrolltop_btn"&gt;…&lt;/button&gt;
+    &lt;script src="assets/js/glightbox.min.js"&gt;&lt;/script&gt;
+    &lt;script src="assets/js/swiper.min.js"&gt;&lt;/script&gt;
+    &lt;script src="assets/js/lenis.min.js"&gt;&lt;/script&gt;
+    &lt;script src="assets/js/aos.min.js"&gt;&lt;/script&gt;
+    &lt;script src="assets/js/main.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <ul class="list">
+            <li>Each section is wrapped in <code>&lt;!-- Start … --&gt;</code> / <code>&lt;!-- End … --&gt;</code> comments, so you can find, copy, move or delete it easily.</li>
+            <li>Any section can be copied to another page; its styles are global.</li>
+            <li>Change the <code>&lt;title&gt;</code> and <code>&lt;meta name="description"&gt;</code> of every page for search engines.</li>
+          </ul>
+
+          <h3 id="new-page">Creating a new page</h3>
+          <ol class="steps">
+            <li>Copy the page closest to what you need, for example <code>about.html</code>, and rename it (<code>gallery.html</code>).</li>
+            <li>Update its <code>&lt;title&gt;</code>, meta description and the heading in the page hero.</li>
+            <li>Keep the sections you want inside <code>&lt;main&gt;</code> and delete the rest.</li>
+            <li>Link to it from the menu of every page (see <a href="#header">Header &amp; Menu</a>).</li>
+          </ol>
+        </section>
+
+        <!-- ============ PAGES ============ -->
+        <section id="pages">
+          <h2>Pages</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">File</th><th scope="col">Page</th><th scope="col">Main sections</th></tr></thead>
+              <tbody>
+                <tr><td><code>index.html</code></td><td>Home</td><td>Hero, about, services, gallery, achievements, testimonials, newsletter</td></tr>
+                <tr><td><code>about.html</code></td><td>About</td><td>Story, animated counters, team, photo gallery</td></tr>
+                <tr><td><code>services.html</code></td><td>Services</td><td>Service list, work process, video</td></tr>
+                <tr><td><code>service-details.html</code></td><td>Service Details</td><td>Service text, gallery slider, FAQ</td></tr>
+                <tr><td><code>packages.html</code></td><td>Packages</td><td>Silver, Golden, Platinum and Custom packages</td></tr>
+                <tr><td><code>contact.html</code></td><td>Contact</td><td>Contact form, Google map</td></tr>
+                <tr><td><code>privacy-policy.html</code></td><td>Privacy Policy</td><td>Legal text</td></tr>
+                <tr><td><code>terms-conditions.html</code></td><td>Terms &amp; Conditions</td><td>Legal text</td></tr>
+                <tr><td><code>404.html</code></td><td>Page not found</td><td>Error message and link home</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Inner pages start with a hero banner (<code>cs_hero_style_2</code>)
+            that shows the page title over a background image set with
+            <code>data-src</code> (see <a href="#images">Logo &amp; Images</a>).
+          </p>
+          <div class="callout warn">
+            The legal pages contain sample text only. Replace it with your own
+            privacy policy and terms before you publish the site.
+          </div>
+        </section>
+
+        <!-- ============ HEADER ============ -->
+        <section id="header">
+          <h2>Header &amp; Menu</h2>
+          <p>
+            The header has the logo in the centre and the menu split into two
+            lists, one on each side. The menu is plain HTML, repeated in every
+            page, so update it in all <code>.html</code> files.
+          </p>
+          <h3 id="add-menu-item">Adding a menu item</h3>
+          <div class="code"><pre><code>&lt;ul class="cs_nav_list cs_mp_0"&gt;
+  &lt;li&gt;&lt;a href="packages.html"&gt;Packages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="gallery.html"&gt;Gallery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p>
+            Keep both lists about the same length so the logo stays centred.
+          </p>
+          <h3 id="mobile-menu">Mobile menu</h3>
+          <p>
+            Below 1200px the two lists join into one mobile menu behind a
+            toggle button. It closes on <kbd>Esc</kbd>, on a link click and when
+            the window grows back to desktop width. The breakpoint is
+            <code>MOBILE_MENU_BREAKPOINT</code> in <code>assets/js/main.js</code>
+            and must match the <code>max-width: 1199px</code> rule in
+            <code>assets/sass/common/_header.scss</code>.
+          </p>
+          <h3 id="sticky-header">Sticky header</h3>
+          <p>
+            Headers with the <code>cs_sticky_header</code> class stick to the top
+            once the page scrolls. Remove the class to keep the header in place.
+          </p>
+        </section>
+
+        <!-- ============ FOOTER ============ -->
+        <section id="footer">
+          <h2>Footer</h2>
+          <p>
+            The footer (<code>cs_footer_style_1</code>) has a call-to-action
+            heading with social links, three link columns (About, Service,
+            Contact) and a bottom bar with the copyright and legal links. Edit the
+            links, phone number and email in every page. The copyright year in
+            <code>&lt;span class="cs_getting_year"&gt;</code> updates itself to the
+            current year.
+          </p>
+          <div class="code"><pre><code>&lt;li&gt;&lt;a href="tel:+15550123456"&gt;+1&amp;nbsp;(555)&amp;nbsp;012&amp;#8209;3456&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="mailto:hello@example.com"&gt;hello@example.com&lt;/a&gt;&lt;/li&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p>
+            Social links use short labels (<code>TW</code>, <code>FB</code>,
+            <code>IG</code>) with an <code>aria-label</code>. Change the
+            <code>href</code> to your profile and keep the label descriptive.
+          </p>
+        </section>
+
+        <!-- ============ COLORS ============ -->
+        <section id="colors">
+          <h2>Colors &amp; Dark Mode</h2>
+          <p>
+            All colors are CSS custom properties at the top of
+            <code>assets/css/style.css</code> (source:
+            <code>assets/sass/default/_variable.scss</code>). Change a value once
+            and every page follows.
+          </p>
+          <div class="code">
+            <pre><code>:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --primary-color: #6C4E3F;   /* brown: text, buttons, borders */
+  --secondary-color: #FAF6F2; /* cream: page background */
+  --gray-color: #F3EEE7;      /* soft section background */
+  --surface-color: #fff;      /* header, mobile menu, photo frames */
+  --brand-color: #6C4E3F;     /* brown that stays brown in dark mode */
+  --on-brand-color: #FAF6F2;  /* text on brown */
+}</code></pre>
+            <button type="button" class="copy" data-copy>Copy</button>
+          </div>
+          <ul class="swatches">
+            <li>
+              <span style="--swatch: #6C4E3F"></span>Primary
+              <code>#6C4E3F</code>
+            </li>
+            <li>
+              <span style="--swatch: #FAF6F2"></span>Secondary
+              <code>#FAF6F2</code>
+            </li>
+            <li>
+              <span style="--swatch: #F3EEE7"></span>Gray
+              <code>#F3EEE7</code>
+            </li>
+            <li>
+              <span style="--swatch: #ffffff"></span>Surface
+              <code>#FFFFFF</code>
+            </li>
+            <li>
+              <span style="--swatch: #000000"></span>Black
+              <code>#000000</code>
+            </li>
+          </ul>
+          <div class="callout tip">
+            Keep a contrast ratio of at least 4.5:1 between
+            <code>--primary-color</code> and <code>--secondary-color</code> so
+            text stays readable.
+          </div>
+
+          <h3 id="dark-mode">Dark mode</h3>
+          <p>
+            The switcher on the side of every page (bottom corner on phones)
+            cycles <em>Device</em> (the default, follows the visitor's system
+            setting) → <em>Light</em> → <em>Dark</em>. The choice is saved in the
+            browser (<code>dreamday-theme</code> in <code>localStorage</code>) and
+            set on the page as <code>&lt;html data-theme="dark"&gt;</code>.
+            <code>assets/js/theme-init.js</code> applies it in the
+            <code>&lt;head&gt;</code> before the first paint, so the page does not
+            flash.
+          </p>
+          <p>
+            Dark mode only swaps the color variables. Change the dark values in
+            <code>_variable.scss</code> (or near the top of
+            <code>style.css</code>):
+          </p>
+          <div class="code"><pre><code>[data-theme="dark"] {
+  --primary-color: #E8D9CB;   /* text, headings, borders */
+  --secondary-color: #16110E; /* page background */
+  --gray-color: #211915;      /* soft section background */
+  --surface-color: #2A211C;   /* header, mobile menu, photo frames */
+  --surface-translucent: rgba(42, 33, 28, 0.88);
+  --hover-strong-color: #fff;
+}</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <ul class="list">
+            <li>Brown line-art images (flowers, icons, logo) are lightened automatically, and the two light background images switch to their <code>_dark.webp</code> versions. See <code>assets/sass/common/_theme.scss</code>.</li>
+            <li>Link straight to a theme with a URL parameter: <code>index.html?theme=dark</code>, <code>?theme=light</code> or <code>?theme=system</code>.</li>
+            <li>To make dark the default for everyone, add <code>data-theme="dark"</code> to the <code>&lt;html&gt;</code> tag of each page.</li>
+            <li>To hide the switcher, delete the line <code>themeSwitcher();</code> inside the <code>DOMContentLoaded</code> block of <code>assets/js/main.js</code>. Saved choices and URL parameters still work through <code>theme-init.js</code>; remove that script tag from the <code>&lt;head&gt;</code> too if you don't want them.</li>
+          </ul>
+        </section>
+
+        <!-- ============ TYPOGRAPHY ============ -->
+        <section id="typography">
+          <h2>Typography &amp; Fonts</h2>
+          <p>
+            Headings use <strong>Cormorant Upright</strong>
+            (<code>--primary-font</code>) and body text uses
+            <strong>Montserrat</strong> (<code>--secondary-font</code>). Both load
+            from Google Fonts with a <code>&lt;link&gt;</code> in the
+            <code>&lt;head&gt;</code> of every page.
+          </p>
+
+          <h3 id="type-scale">Font size classes</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Class</th>
+                  <th scope="col">Size (desktop)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>cs_fs_64</code></td><td>64px</td></tr>
+                <tr><td><code>cs_fs_48</code></td><td>48px</td></tr>
+                <tr><td><code>cs_fs_40</code></td><td>40px</td></tr>
+                <tr><td><code>cs_fs_32</code></td><td>32px</td></tr>
+                <tr><td><code>cs_fs_20</code></td><td>20px</td></tr>
+                <tr><td><code>cs_fs_16</code></td><td>16px</td></tr>
+                <tr><td><code>cs_fs_14</code></td><td>14px</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Large sizes scale down on tablets and phones automatically.</p>
+
+          <h3 id="change-font">Changing a font</h3>
+          <ol class="steps">
+            <li>
+              Pick a font on
+              <a href="https://fonts.google.com" target="_blank" rel="noopener">Google Fonts</a>
+              and copy its <code>&lt;link&gt;</code> URL.
+            </li>
+            <li>
+              Replace the Google Fonts <code>&lt;link&gt;</code> in the
+              <code>&lt;head&gt;</code> of every page.
+            </li>
+            <li>
+              Change the family name in <code>--primary-font</code> or
+              <code>--secondary-font</code> in <code>style.css</code> (or
+              <code>_variable.scss</code>).
+            </li>
+          </ol>
+          <div class="callout">
+            For Arabic, Hebrew, Cyrillic or other scripts, choose a font that
+            supports them (see <a href="#rtl">RTL Support</a>).
+          </div>
+        </section>
+
+        <!-- ============ ICONS ============ -->
+        <section id="icons">
+          <h2>Icons</h2>
+          <p>
+            UI icons come from
+            <a href="https://fontawesome.com/search?ic=free" target="_blank" rel="noopener">Font Awesome Free</a>
+            7, self-hosted in <code>assets/fonts/</code> and loaded with
+            <code>assets/css/fontawesome.min.css</code>. Pick an icon on their
+            site and copy its class:
+          </p>
+          <div class="code">
+            <pre><code>&lt;i class="fa-regular fa-heart"&gt;&lt;/i&gt;
+&lt;i class="fa-solid fa-chevron-up"&gt;&lt;/i&gt;
+&lt;i class="fa-brands fa-instagram"&gt;&lt;/i&gt;</code></pre>
+            <button type="button" class="copy" data-copy>Copy</button>
+          </div>
+          <ul class="list">
+            <li>Icons take the text color and font size of their parent.</li>
+            <li>
+              An icon-only link or button needs an
+              <code>aria-label</code> that says what it does, and the icon
+              itself <code>aria-hidden="true"</code>.
+            </li>
+            <li>
+              Decorative illustrations (flowers, ornaments, package icons) are
+              SVG files in <code>assets/img/</code>. Replace them with files of
+              the same name.
+            </li>
+          </ul>
+        </section>
+
+        <!-- ============ IMAGES ============ -->
+        <section id="images">
+          <h2>Logo &amp; Images</h2>
+          <h3 id="logo">Logo</h3>
+          <p>
+            Replace <code>assets/img/logo.svg</code> (header) and
+            <code>assets/img/logo2.svg</code> (footer). Keep a similar wide shape
+            so it fits the header, or update the <code>width</code> and
+            <code>height</code> on the <code>&lt;img&gt;</code> in each page.
+          </p>
+
+          <h3 id="favicon">Favicon</h3>
+          <p>
+            Replace <code>assets/img/favicon.png</code> with your own square
+            icon (32×32 or larger) and keep the name.
+          </p>
+
+          <h3 id="replace-images">Replacing images</h3>
+          <p>
+            The simplest way is to overwrite a file in <code>assets/img/</code>
+            with your own image of the same name and a similar shape.
+          </p>
+          <ul class="list">
+            <li>Always write a short <code>alt</code> text that describes the new photo. Use <code>alt=""</code> for purely decorative images.</li>
+            <li>Export photos at about 1.5× their displayed size and save them as WebP (quality ~80) to keep pages fast.</li>
+            <li>If you use another format, update the file extension in the HTML.</li>
+          </ul>
+
+          <h3 id="background-images">Background images</h3>
+          <p>
+            Section backgrounds use a <code>data-src</code> attribute, which
+            <code>main.js</code> turns into a CSS background:
+          </p>
+          <div class="code"><pre><code>&lt;section class="cs_hero_style_2 cs_bg_filled" data-src="assets/img/service_hero.webp"&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <div class="callout">
+            Demo photos are for preview only and are replaced with placeholders
+            of the same size and name in the download. See
+            <a href="#credits">Credits</a>.
+          </div>
+        </section>
+
+        <!-- ============ LAYOUT ============ -->
+        <section id="layout">
+          <h2>Spacing &amp; Breakpoints</h2>
+          <h3 id="spacing">Spacing</h3>
+          <p>
+            Vertical space between sections is an empty
+            <code>&lt;div&gt;</code> with two classes: the height on desktop and
+            the height on tablets and phones (below 992px).
+          </p>
+          <div class="code"><pre><code>&lt;div class="cs_height_120 cs_height_lg_80"&gt;&lt;/div&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p>
+            Margin helpers follow the same idea: <code>cs_mb_32</code> adds a
+            32px bottom margin. Bootstrap's own utilities
+            (<code>mb-0</code>, <code>text-center</code>, …) work as well.
+          </p>
+
+          <h3 id="breakpoints">Breakpoints</h3>
+          <p>
+            The layout uses the Bootstrap 5 grid
+            (<code>row</code>, <code>col-lg-6</code>, …) and the same breakpoints:
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Bootstrap prefix</th>
+                  <th scope="col">Min width</th>
+                  <th scope="col">Typical device</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>(none)</td><td>0</td><td>Phones</td></tr>
+                <tr><td><code>sm</code></td><td>576px</td><td>Phones, landscape</td></tr>
+                <tr><td><code>md</code></td><td>768px</td><td>Tablets</td></tr>
+                <tr><td><code>lg</code></td><td>992px</td><td>Small laptops</td></tr>
+                <tr><td><code>xl</code></td><td>1200px</td><td>Laptops, desktops (desktop menu starts here)</td></tr>
+                <tr><td><code>xxl</code></td><td>1400px</td><td>Large desktops</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ UTILITIES ============ -->
+        <section id="utilities">
+          <h2>Buttons &amp; Forms</h2>
+          <p>The template's reusable classes are defined in <code>assets/css/style.css</code>:</p>
+          <h3 id="button-example">Button</h3>
+          <div class="code"><pre><code>&lt;a href="contact.html" class="cs_btn_style_1"&gt;&lt;span&gt;Get Started&lt;/span&gt;&lt;/a&gt;
+&lt;a href="contact.html" class="cs_btn_style_1 cs_brown"&gt;&lt;span&gt;Book Now&lt;/span&gt;&lt;/a&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p>The plain button is light (for dark photos); add <code>cs_brown</code> for a brown button on light backgrounds.</p>
+          <h3 id="field-example">Form field</h3>
+          <div class="code"><pre><code>&lt;label for="email"&gt;Your Email&lt;/label&gt;
+&lt;input type="email" name="email" id="email" class="cs_form_field" autocomplete="email" required&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+        </section>
+
+        <!-- ============ SASS ============ -->
+        <section id="sass">
+          <h2>Editing the SCSS</h2>
+          <p>
+            You can edit <code>assets/css/style.css</code> directly. If you
+            prefer SCSS, install <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>,
+            then run in the template folder:
+          </p>
+          <div class="code"><pre><code>npm install
+npm run watch:css</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p>
+            Prefer not to use the terminal? The VS Code
+            <strong>Live Sass Compiler</strong> extension does the same job:
+            set its output to <code>assets/css/style.css</code> and click
+            <em>Watch Sass</em>. Without it, run <code>npm run build:css</code>
+            before you upload (see <a href="#build-before-upload">Deployment</a>).
+          </p>
+          <p>
+            <code>assets/sass/style.scss</code> loads the partials in order and
+            has a table of contents at the top. The SCSS uses the modern
+            <code>@use</code> syntax and compiles without warnings on Dart Sass
+            1.80+.
+          </p>
+          <div class="callout warn">
+            Compiling overwrites <code>assets/css/style.css</code>. Pick one way
+            of working: if you edit the CSS file by hand, those changes are lost
+            the next time you compile the SCSS.
+          </div>
+        </section>
+
+        <!-- ============ RTL ============ -->
+        <section id="rtl">
+          <h2>RTL Support</h2>
+          <p>
+            Every page supports right-to-left languages from the same
+            stylesheet. Set the direction on the <code>&lt;html&gt;</code> tag of
+            each page:
+          </p>
+          <div class="code"><pre><code>&lt;html lang="ar" dir="rtl" class="no-js"&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p>
+            Visitors can also switch between LTR and RTL in the switcher. Their
+            choice is saved in the browser (<code>dreamday-dir</code> in
+            <code>localStorage</code>), and you can link straight to it with
+            <code>index.html?dir=rtl</code> (also
+            <code>?dir=rtl&amp;theme=dark</code>).
+          </p>
+          <p>
+            The theme CSS uses logical properties, so the layout mirrors
+            automatically. When you add your own CSS, keep it
+            direction-agnostic:
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Use</th><th scope="col">Instead of</th></tr></thead>
+              <tbody>
+                <tr><td><code>margin-inline-start</code> / <code>-end</code></td><td><code>margin-left</code> / <code>margin-right</code></td></tr>
+                <tr><td><code>padding-inline-start</code> / <code>-end</code></td><td><code>padding-left</code> / <code>padding-right</code></td></tr>
+                <tr><td><code>inset-inline-start</code> / <code>-end</code></td><td><code>left</code> / <code>right</code></td></tr>
+                <tr><td><code>text-align: start</code> / <code>end</code></td><td><code>text-align: left</code> / <code>right</code></td></tr>
+                <tr><td>Bootstrap <code>ms-*</code> / <code>me-*</code>, <code>text-start</code> / <code>text-end</code></td><td><code>ml-*</code> / <code>mr-*</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="list">
+            <li>Numbers, prices and phone numbers always stay left-to-right.</li>
+            <li>Transforms do not flip on their own. Add a <code>[dir="rtl"]</code> rule for them, as in <code>assets/sass/common/_theme.scss</code>.</li>
+          </ul>
+          <div class="callout">
+            Cormorant Upright and Montserrat cover Latin scripts only. For an
+            Arabic, Hebrew or Persian site, also load a suitable font (see
+            <a href="#change-font">Changing a font</a>).
+          </div>
+        </section>
+
+        <!-- ============ COMPONENTS ============ -->
+        <section id="components">
+          <h2>Components</h2>
+          <p>
+            Interactive parts are set up in <code>assets/js/main.js</code> from
+            classes and data attributes, so you only write HTML.
+          </p>
+
+          <h3 id="sliders">Sliders</h3>
+          <p>
+            Sliders use <a href="https://swiperjs.com" target="_blank" rel="noopener">Swiper</a>.
+            A <code>.cs_slider</code> wraps a <code>.cs_slider_container</code>
+            whose data attributes hold the options:
+          </p>
+          <div class="code"><pre><code>&lt;div class="cs_slider"&gt;
+  &lt;div class="cs_slider_container" data-autoplay="0" data-loop="1" data-speed="600"
+    data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="1"
+    data-md-slides="2" data-lg-slides="3"&gt;
+    &lt;div class="swiper-wrapper"&gt;
+      &lt;div class="swiper-slide"&gt;…&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Attribute</th><th scope="col">Description</th></tr></thead>
+              <tbody>
+                <tr><td><code>data-autoplay</code></td><td><code>0</code> = off, <code>1</code> = on, or a delay in ms (e.g. <code>5000</code>)</td></tr>
+                <tr><td><code>data-loop</code></td><td><code>1</code> to loop slides</td></tr>
+                <tr><td><code>data-speed</code></td><td>Transition speed in ms</td></tr>
+                <tr><td><code>data-slides-per-view</code></td><td>A number, or <code>responsive</code> to use the next four attributes</td></tr>
+                <tr><td><code>data-xs/sm/md/lg-slides</code></td><td>Slides shown at 0 / 640 / 768 / 1024px and up</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Autoplay stops when the visitor prefers reduced motion.</p>
+
+          <h3 id="counters">Counters</h3>
+          <div class="code"><pre><code>&lt;span class="cs_counter" data-count-to="250" data-suffix="+"&gt;250+&lt;/span&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p>When the counter scrolls into view, the digits roll like a slot machine and stop on the final number. Under reduced motion the number appears at once.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Attribute</th><th scope="col">Description</th></tr></thead>
+              <tbody>
+                <tr><td><code>data-count-to</code></td><td>Final number. Decimals and commas are supported (<code>96.8</code>, <code>1,200</code>).</td></tr>
+                <tr><td><code>data-suffix</code></td><td>Optional text after the number, such as <code>+</code> or <code>%</code>.</td></tr>
+                <tr><td><code>data-duration</code></td><td>Optional animation length in ms (default <code>3500</code>).</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Keep the final number as the element's text too, so it shows when JavaScript is off.</p>
+
+          <h3 id="lightbox">Image lightbox</h3>
+          <p>
+            Add the class <code>cs_lightgallery</code> to a wrapper. Every
+            <code>a.cs_gallery_item</code> inside it opens in
+            <a href="https://biati-digital.github.io/glightbox/" target="_blank" rel="noopener">GLightbox</a>,
+            and next / previous stays inside that gallery.
+          </p>
+          <div class="code"><pre><code>&lt;div class="cs_lightgallery"&gt;
+  &lt;a href="assets/img/photo-large.webp" class="cs_gallery_item"&gt;
+    &lt;img src="assets/img/photo.webp" alt="Describe the photo"&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+
+          <h3 id="faq">FAQ accordion</h3>
+          <p>
+            Each question is a <code>&lt;button class="cs_accordion_head"&gt;</code>
+            followed by a <code>.cs_accordion_body</code>, inside a
+            <code>.cs_accordion</code>. Add the class <code>active</code> to a
+            <code>.cs_accordion</code> to open it by default.
+            <code>aria-expanded</code> is updated for screen readers.
+          </p>
+
+          <h3 id="video">Video pop-up</h3>
+          <p>
+            Any link with the class <code>cs_video_open</code> opens its
+            <code>href</code> in a pop-up. Use a YouTube <em>embed</em> URL:
+          </p>
+          <div class="code"><pre><code>&lt;a href="https://www.youtube.com/embed/VIDEO_ID" class="cs_video_open"&gt;Play video&lt;/a&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+          <p><kbd>Esc</kbd> or a click outside the video closes it.</p>
+        </section>
+
+        <!-- ============ PAGE-EFFECTS ============ -->
+        <section id="page-effects">
+          <h2>Page Effects</h2>
+          <h3 id="preloader">Preloader</h3>
+          <p>
+            The "DREAMDAY" loading screen fades out when the page is ready.
+            To remove it, delete the <code>cs_preloader</code> block at the top of
+            each page.
+          </p>
+          <h3 id="back-to-top">Back to top</h3>
+          <p>The <code>cs_scrolltop_btn</code> button appears after 350px of scrolling.</p>
+          <h3 id="aos">Scroll animations (AOS)</h3>
+          <p>
+            Add <code>data-aos="fade-up"</code> (or <code>fade-down</code>,
+            <code>fade-right</code>, …) to any element. The options are in
+            <code>aosInit()</code> in <code>main.js</code>. Animations are off
+            when the visitor prefers reduced motion.
+          </p>
+          <h3 id="smooth-scroll">Smooth scrolling</h3>
+          <p>
+            <a href="https://lenis.darkroom.engineering/" target="_blank" rel="noopener">Lenis</a>
+            smooths mouse-wheel scrolling on desktop. It is skipped under reduced
+            motion. To turn it off, delete <code>smoothScroll();</code> in
+            <code>main.js</code>.
+          </p>
+        </section>
+
+        <!-- ============ FORMS-JS ============ -->
+        <section id="forms-js">
+          <h2>Forms &amp; Map</h2>
+          <h3 id="contact-form">Contact form</h3>
+          <p>
+            The contact form sends messages with
+            <a href="https://web3forms.com/" target="_blank" rel="noopener">Web3Forms</a>
+            (free, no server code needed).
+          </p>
+          <ol class="steps">
+            <li>Go to <a href="https://web3forms.com/" target="_blank" rel="noopener">web3forms.com</a>, enter your email address and copy the access key they send you.</li>
+            <li>Open <code>contact.html</code> and replace <code>YOUR_ACCESS_KEY_HERE</code>:
+              <div class="code"><pre><code>&lt;input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"&gt;</code></pre><button type="button" class="copy" data-copy>Copy</button></div>
+            </li>
+            <li>Upload the page and send a test message. The result shows under the button.</li>
+          </ol>
+          <div class="callout">
+            Until a key is added, the form shows "Form is not configured yet"
+            instead of sending.
+          </div>
+          <h3 id="newsletter">Newsletter form</h3>
+          <p>
+            Newsletter forms use <code>action="#"</code> and show a "Thank you
+            for subscribing!" message in the demo. Connect them to your email
+            service (Mailchimp, Brevo, …) by replacing the <code>action</code>
+            URL and field names with the ones your provider gives you; the demo
+            message then turns off automatically.
+          </p>
+          <h3 id="map">Map</h3>
+          <p>
+            In Google Maps, choose <em>Share → Embed a map</em>, copy the
+            <code>src</code> URL and paste it into the <code>&lt;iframe&gt;</code>
+            in <code>contact.html</code>.
+          </p>
+        </section>
+
+        <!-- ============ ACCESSIBILITY ============ -->
+        <section id="accessibility">
+          <h2>Accessibility</h2>
+          <p>The template is built to be usable with a keyboard and screen reader:</p>
+          <ul class="list">
+            <li>"Skip to main content" link and visible focus outlines on every control.</li>
+            <li>Mobile menu, FAQ, slider arrows and video pop-up work with the keyboard. <kbd>Esc</kbd> closes the menu and the video.</li>
+            <li>Every image has <code>alt</code> text and every icon-only control has an <code>aria-label</code>.</li>
+            <li>Animations are reduced or removed when the visitor asks for reduced motion.</li>
+            <li>Pages stay readable when JavaScript is turned off.</li>
+          </ul>
+          <p>When you edit the template, please keep these habits:</p>
+          <ul class="list">
+            <li>Keep one <code>&lt;h1&gt;</code> per page and do not skip heading levels.</li>
+            <li>Give every form field a <code>&lt;label&gt;</code> (use <code>visually-hidden</code> to hide it visually).</li>
+            <li>Describe new images in <code>alt</code>.</li>
+          </ul>
+        </section>
+
+        <!-- ============ BROWSERS ============ -->
+        <section id="browsers">
+          <h2>Browser Support</h2>
+          <p>
+            DreamDay supports the current versions of Chrome, Edge, Firefox,
+            Safari and Opera, on desktop and mobile.
+          </p>
+          <p>Internet Explorer is not supported.</p>
+        </section>
+
+        <!-- ============ TROUBLESHOOTING ============ -->
+        <section id="troubleshooting">
+          <h2>Troubleshooting</h2>
+          <details>
+            <summary>The map, video or contact form does not work.</summary>
+            <p>They need the page to be served over <code>http://</code> or <code>https://</code>, not opened as a file. Use a local server such as VS Code Live Server, or upload to your hosting.</p>
+          </details>
+          <details>
+            <summary>The contact form says "Form is not configured yet".</summary>
+            <p>Add your Web3Forms access key in <code>contact.html</code>. See <a href="#forms-js">Forms &amp; Map</a>.</p>
+          </details>
+          <details>
+            <summary>My CSS changes disappeared.</summary>
+            <p>Compiling the SCSS overwrites <code>style.css</code>. Make the change in the matching <code>.scss</code> file instead, or stop using the SCSS build. See <a href="#sass">Editing the SCSS</a>.</p>
+          </details>
+          <details>
+            <summary>I edited the SCSS but nothing changes in the browser.</summary>
+            <p>The browser only reads <code>assets/css/style.css</code>, so the SCSS has to be compiled again after every change. Check these in order:</p>
+            <ol>
+              <li><strong>Is the compiler running?</strong> With Live Sass Compiler, the VS Code status bar must say <em>Watching...</em>. If it says <em>Watch Sass</em>, click it, then save your <code>.scss</code> file again (<kbd>Ctrl</kbd>+<kbd>S</kbd>). It only compiles files you save inside VS Code. With npm, keep <code>npm run watch:css</code> running in a terminal.</li>
+              <li><strong>Did the compile fail?</strong> A typo in the SCSS stops the compile, and <code>style.css</code> keeps the old styles. Look for the error in the terminal, or in VS Code under <em>View &gt; Output</em> &gt; <em>Live Sass Compile</em>.</li>
+              <li><strong>Is the output going to the right file?</strong> Live Sass Compiler must save to <code>/assets/css</code>. Otherwise it writes a different <code>style.css</code> that the pages never load.</li>
+              <li><strong>Is the browser showing an old copy?</strong> Press <kbd>Ctrl</kbd>+<kbd>F5</kbd> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on Mac) to reload without the cache.</li>
+            </ol>
+            <p>Still stuck? Run <code>npm run build:css</code> once. It compiles everything fresh and prints any error. To make sure it worked, open <code>style.css</code> and search for the value you changed.</p>
+          </details>
+          <details>
+            <summary>The page is stuck in dark mode or RTL.</summary>
+            <p>The switcher saves the choice in the browser. Use the switcher again, open the page with <code>?theme=light</code> or <code>?dir=ltr</code>, or clear the site data in your browser.</p>
+          </details>
+          <details>
+            <summary>A new image does not show.</summary>
+            <p>Check the file name and extension. On most servers names are case-sensitive: <code>Photo.webp</code> and <code>photo.webp</code> are different files.</p>
+          </details>
+        </section>
+
+        <!-- ============ CHANGELOG ============ -->
+        <section id="changelog">
+          <h2>Changelog</h2>
+          <div class="changelog">
+            <h3 id="v1-0-0">Version 1.0.0 <span>Initial release</span></h3>
+            <ul class="list">
+              <li>9 HTML pages.</li>
+              <li>Working contact form, sliders, lightbox, video pop-up and animated counters.</li>
+              <li>Light and dark mode, with a theme and direction switcher.</li>
+              <li>RTL and reduced-motion support.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ CREDITS ============ -->
+        <section id="credits">
+          <h2>Credits</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Resource</th><th scope="col">Version</th><th scope="col">License</th></tr></thead>
+              <tbody>
+                <tr><td><a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap</a></td><td>5.3.7</td><td>MIT</td></tr>
+                <tr><td><a href="https://swiperjs.com" target="_blank" rel="noopener">Swiper</a></td><td>11.2.10</td><td>MIT</td></tr>
+                <tr><td><a href="https://biati-digital.github.io/glightbox/" target="_blank" rel="noopener">GLightbox</a></td><td>3.3.1</td><td>MIT</td></tr>
+                <tr><td><a href="https://lenis.darkroom.engineering/" target="_blank" rel="noopener">Lenis</a></td><td>1.3.4</td><td>MIT</td></tr>
+                <tr><td><a href="https://michalsnik.github.io/aos/" target="_blank" rel="noopener">AOS</a></td><td>2.x</td><td>MIT</td></tr>
+                <tr><td><a href="https://fontawesome.com" target="_blank" rel="noopener">Font Awesome Free</a></td><td>7.2.0</td><td>Icons CC BY 4.0, fonts SIL OFL 1.1, code MIT</td></tr>
+                <tr><td><a href="https://fonts.google.com/specimen/Cormorant+Upright" target="_blank" rel="noopener">Cormorant Upright</a></td><td>—</td><td>OFL</td></tr>
+                <tr><td><a href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener">Montserrat</a></td><td>—</td><td>OFL</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout">
+            Photos in the live preview are for demonstration only and are not
+            included in the download; the download contains placeholder images
+            of the same size and name, so you can drop your own in.
+          </div>
+        </section>
+
+        <!-- ============ SUPPORT ============ -->
+        <section id="support">
+          <h2>Support</h2>
+          <p>
+            If you need help with the template, open a support ticket at
+            <a href="https://support.laralink.com/" target="_blank" rel="noopener"><strong>support.laralink.com</strong></a>.
+            We usually reply within 1–2 business days (Monday–Friday).
+          </p>
+          <p>
+            <a class="btn" href="https://support.laralink.com/" target="_blank" rel="noopener">
+              Create a support ticket <span aria-hidden="true">→</span>
+            </a>
+          </p>
+          <h3 id="support-include">Please include</h3>
+          <ul class="list">
+            <li>Your purchase code.</li>
+            <li>The page and section where the problem happens.</li>
+            <li>A screenshot or a link to your site, if possible.</li>
+            <li>Your browser and device.</li>
+          </ul>
+          <h3 id="support-scope">What support covers</h3>
+          <ul class="list">
+            <li>Questions about the template's features and files.</li>
+            <li>Bugs in the template as it was delivered.</li>
+          </ul>
+          <p>
+            Support does not include custom changes, back-end integration or
+            problems caused by third-party code. If you like DreamDay, a rating
+            on ThemeForest helps us a lot. Thank you!
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>© <span data-year>2026</span> DreamDay. Made by Laralink.</p>
+    </footer>
+
+    <button type="button" class="to-top" aria-label="Back to top" data-to-top hidden>
+      ↑
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

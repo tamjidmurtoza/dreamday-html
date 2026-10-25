@@ -1,0 +1,76 @@
+/*=========================================================
+  17. Accordion
+===========================================================*/
+.cs_accordion_in {
+  display: flex;
+  gap: 40px 80px;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+
+    .cs_accordion_img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.cs_accordion.cs_style_1 {
+  border-bottom: 1px solid var(--primary-color);
+
+  .cs_accordion_head {
+    display: block;
+    width: 100%;
+    text-align: start;
+    font-family: inherit;
+    line-height: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0 0 28px;
+    padding-inline-end: 60px;
+  }
+
+
+  .cs_accordion_toggler {
+    top: 0;
+    inset-inline-end: 0;
+    transition: transform .3s ease;
+  }
+
+  .cs_accordion_body {
+    margin-top: -12px;
+    padding-bottom: 24px;
+  }
+
+  &.active {
+    .cs_accordion_head {
+      pointer-events: none;
+    }
+
+    .cs_accordion_toggler {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.cs_accordions_style_1 {
+  padding-inline-start: 50px;
+
+  .cs_accordion.cs_style_1 {
+    margin-bottom: 28px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width:1199px) {
+    padding-inline-start: 0;
+  }
+}

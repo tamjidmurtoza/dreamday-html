@@ -1,0 +1,54 @@
+/*=========================================================
+  22. Legal & 404 Pages
+===========================================================*/
+.cs_legal_content {
+  max-width: 860px;
+  margin-inline: auto;
+  font-size: 18px;
+  line-height: 1.7em;
+
+  h2 {
+    margin: 48px 0 16px;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 575px) {
+    font-size: 16px;
+
+    h2 {
+      margin-top: 36px;
+    }
+  }
+}
+
+.cs_legal_updated {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.cs_error_page {
+  display: flex;
+  align-items: center;
+  min-height: 70vh;
+  padding: 160px 0 120px;
+
+  @media (max-width: 991px) {
+    padding: 130px 0 80px;
+  }
+}
+
+.cs_error_code {
+  margin-bottom: 8px;
+  font-size: clamp(110px, 22vw, 220px);
+  font-weight: 600;
+  line-height: 1em;
+  color: var(--primary-color);
+}

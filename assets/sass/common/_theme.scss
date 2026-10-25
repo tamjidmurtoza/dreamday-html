@@ -1,0 +1,169 @@
+/*=========================================================
+  23. Theme Switcher, Dark Mode & RTL
+===========================================================*/
+
+/*==========================================
+  Theme Switcher
+ ===========================================*/
+.cs_theme_switcher {
+  position: fixed;
+  top: 50%;
+  inset-inline-end: 16px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transform: translateY(-50%);
+
+  button {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-family: var(--secondary-font);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--primary-color);
+    background-color: var(--surface-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--on-brand-color);
+      background-color: var(--brand-color);
+      border-color: var(--brand-color);
+    }
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+  @media (max-width: 767px) {
+    top: auto;
+    bottom: 20px;
+    inset-inline-end: auto;
+    inset-inline-start: 20px;
+    flex-direction: row;
+    transform: none;
+  }
+}
+
+/*==========================================
+  Shared Fixes
+ ===========================================*/
+.breadcrumb-item.active {
+  color: inherit;
+  opacity: 0.85;
+}
+
+/*==========================================
+  Dark Mode
+ ===========================================*/
+[data-theme="dark"] {
+  img[src$="flower.svg"],
+  img[src$="flower_2.svg"],
+  img[src$="achievement.svg"],
+  img[src*="icon_"][src$=".svg"],
+  img[src$="media_icon.svg"],
+  img[src$="package.svg"],
+  img[src$="signature.svg"],
+  img[src$="testimonial_avatar.svg"],
+  img[src*="vendors_"][src$=".svg"],
+  img[src$="_vector.webp"],
+  img[src$="vector_3.webp"],
+  img[src$="logo.svg"],
+  img[src$="logo3.svg"] {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  [data-src$="newsletter_bg.svg"] {
+    background-image: url(../img/newsletter_bg_dark.webp) !important;
+  }
+
+  [data-src$="heading_gallery_about_bg.webp"] {
+    background-image: url(../img/heading_gallery_about_bg_dark.webp) !important;
+  }
+
+  .cs_hero_style_1 .cs_overlay {
+    background:
+      linear-gradient(180deg, rgba(22, 17, 14, 0.85) 0, rgba(22, 17, 14, 0) 260px),
+      linear-gradient(0deg, #6C4E3F 0%, rgba(108, 78, 63, 0) 142.19%);
+  }
+
+  .cs_location_map_style_1 iframe {
+    filter: invert(0.9) hue-rotate(180deg);
+  }
+
+  .cs_site_header_style_1.cs_sticky_active {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+}
+
+/*==========================================
+  RTL
+ ===========================================*/
+[dir="rtl"] {
+  .cs_counter_digits,
+  a[href^="tel:"] {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  a[href^="tel:"] {
+    display: inline-block;
+  }
+
+  input[type="tel"] {
+    direction: ltr;
+    text-align: right;
+  }
+
+  .text-end {
+    text-align: left !important;
+  }
+
+  .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0;
+    padding-right: var(--bs-breadcrumb-item-padding-x);
+
+    &::before {
+      float: right;
+      padding-right: 0;
+      padding-left: var(--bs-breadcrumb-item-padding-x);
+    }
+  }
+
+  .cs_link_btn {
+    &::before {
+      transform-origin: top right;
+    }
+
+    &:hover::before {
+      transform-origin: top left;
+    }
+  }
+
+  .cs_slider_arrows svg {
+    transform: scaleX(-1);
+  }
+
+  .cs_card_style_6 .cs_package_details .cs_package_details_icon {
+    border-radius: 500px 0 0 0;
+  }
+
+  .cs_site_header_style_1 .cs_nav .cs_nav_list_wrap {
+    transform-origin: bottom left;
+
+    &.active {
+      transform-origin: top right;
+    }
+  }
+}

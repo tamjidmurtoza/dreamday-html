@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8">
+    <!-- Applies saved theme (light/dark) and direction (RTL) before the page is drawn -->
+    <script src="assets/js/theme-init.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DreamDay - Wedding Planner Website HTML Template">
+    <meta name="description" content="Full details of our wedding planning service, our vendors, work process and FAQ.">
     <meta name="keywords" content="wedding planner, wedding website template, dream wedding, wedding organizer, marriage planning, bridal template, wedding RSVP, couple website">
     <meta name="author" content="Laralink">
     <!-- Favicon -->
     <link rel="icon" href="assets/img/favicon.png">
     <!-- All CSS Files -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/aos.min.css">
     <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/odometer.min.css">
-    <link rel="stylesheet" href="assets/css/lightgallery.min.css">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Site Title -->
-    <title>DreamDay - Wedding Planner Website HTML Template</title>
+    <title>Service Details - DreamDay Wedding Planner HTML Template</title>
   </head>
   <body>
+    <a class="cs_skip_link" href="#main">Skip to main content</a>
     <!-- Preloader Start -->
-    <div class="cs_preloader cs_center">
+    <div class="cs_preloader cs_center" aria-hidden="true">
       <div class="cs_preloader_in">
         <div class="cs_center_column text-center">
           <div class="cs_preloader_icon cs_center cs_fs_40 cs_mb_20"><i class="fa-regular fa-heart"></i></div>
@@ -36,8 +39,8 @@
         <div class="container">
           <div class="cs_main_header_in">
             <div class="cs_main_header_left">
-              <a href="index.html" aria-label="Logo with home page link" class="cs_site_brand">
-              <img src="assets/img/logo.svg" alt="Logo">
+              <a href="index.html" class="cs_site_brand">
+              <img src="assets/img/logo.svg" alt="DreamDay" width="167" height="20">
               </a>
             </div>
             <div class="cs_main_header_center">
@@ -45,12 +48,12 @@
                 <div class="cs_nav_list_wrap">
                   <div class="cs_nav_links_wrap">
                     <ul class="cs_nav_list cs_mp_0">
-                      <li><a href="about.html" aria-label="About page link">about</a></li>
-                      <li class="active"><a href="services.html" aria-label="Services page link">Services</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li class="active"><a href="services.html" aria-current="true">Services</a></li>
                     </ul>
                     <ul class="cs_nav_list cs_mp_0">
-                      <li><a href="packages.html" aria-label="Packages page link">Packages</a></li>
-                      <li><a href="contact.html" aria-label="Contact page link">Contact</a></li>
+                      <li><a href="packages.html">Packages</a></li>
+                      <li><a href="contact.html">Contact</a></li>
                     </ul>
                   </div>
                 </div>
@@ -62,18 +65,20 @@
     </header>
     <!-- End header -->
     <!-- Start Main Content -->
-    <main>
-    <div class="cs_bg_filed" data-src="assets/img/heading_gallery_about_bg.png">
+    <main id="main">
+    <div class="cs_bg_filled" data-src="assets/img/heading_gallery_about_bg.webp">
       <!-- Start hero -->
       <section class="cs_hero_style_3">
         <div class="container">
           <div class="cs_page_header_content text-center">
-            <ol class="breadcrumb cs_primary_color cs_center cs_mp_0">
-              <li class="breadcrumb-item"><a href="index.html" aria-label="Home page link">Home</a></li>
-              <li class="breadcrumb-item"><a href="service.html" aria-label="Service page link">Service</a></li>
-              <li class="breadcrumb-item">Service Details</li>
-            </ol>
-            <h2 class="cs_fs_64 cs_primary_color text-uppercase mb-0" data-aos="zoom-in">Services Details</h2>
+            <nav aria-label="Breadcrumb">
+              <ol class="breadcrumb cs_primary_color cs_center cs_mp_0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Service Details</li>
+              </ol>
+            </nav>
+            <h1 class="cs_fs_64 cs_primary_color text-uppercase mb-0" data-aos="zoom-in">Service Details</h1>
           </div>
         </div>
       </section>
@@ -84,16 +89,16 @@
         <div class="swiper cs_single_property_slider cs_mb_40 cs_mb_lg_30" data-aos="fade-up">
           <div class="swiper-wrapper">
             <div class="cs_property_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_1.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_1.webp" alt="Wedding venue setup" width="1240" height="560" loading="lazy" decoding="async">
             </div>
             <div class="cs_property_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_2.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_2.webp" alt="Wedding table styling" width="1240" height="560" loading="lazy" decoding="async">
             </div>
             <div class="cs_property_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_3.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_3.webp" alt="Wedding floral decor" width="887" height="401" loading="lazy" decoding="async">
             </div>
             <div class="cs_property_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_4.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_4.webp" alt="Wedding ceremony aisle" width="1240" height="560" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -101,16 +106,16 @@
         <div class="swiper cs_single_property_nav" data-aos="fade-down">
           <div class="swiper-wrapper">
             <div class="cs_nav_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_1.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_1.webp" alt="Wedding venue setup" width="1240" height="560" loading="lazy" decoding="async">
             </div>
             <div class="cs_nav_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_2.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_2.webp" alt="Wedding table styling" width="1240" height="560" loading="lazy" decoding="async">
             </div>
             <div class="cs_nav_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_3.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_3.webp" alt="Wedding floral decor" width="887" height="401" loading="lazy" decoding="async">
             </div>
             <div class="cs_nav_thumbnail cs_img_border swiper-slide">
-              <img src="assets/img/service_details_gallery_4.jpg" alt="Thumb">
+              <img src="assets/img/service_details_gallery_4.webp" alt="Wedding ceremony aisle" width="1240" height="560" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
@@ -121,7 +126,7 @@
       <section class="cs_about_style_3">
         <div class="container">
           <span class="cs_about_flower cs_center" data-aos="zoom-in">
-          <img src="assets/img/flower.svg" alt="flower">
+          <img src="assets/img/flower.svg" alt="Decorative flower" width="138" height="98" loading="lazy" decoding="async">
           </span>
           <div class="cs_height_80 cs_height_lg_40"></div>
           <div class="cs_about_details cs_main_header_center text-center">
@@ -148,10 +153,10 @@
             <div class="cs_card_style_2 text-center" >
               <div class="cs_card_top position-relative">
                 <div class="cs_card_thumbnail position-absolute">
-                  <img src="assets/img/vendors_card.jpg" alt="Image">
+                  <img src="assets/img/vendors_card.webp" alt="Enchanted Estate Flowers card" width="280" height="312" loading="lazy" decoding="async">
                 </div>
                 <div class="cs_card_icon cs_center">
-                  <img src="assets/img/vendors_1.svg" alt="Flower">
+                  <img src="assets/img/vendors_1.svg" alt="Enchanted Estate Flowers logo" width="180" height="180" loading="lazy" decoding="async">
                 </div>
               </div>
               <div class="cs_card_details text-center">
@@ -163,10 +168,10 @@
             <div class="cs_card_style_2 text-center" >
               <div class="cs_card_top position-relative">
                 <div class="cs_card_thumbnail position-absolute">
-                  <img src="assets/img/vendors_card.jpg" alt="Image">
+                  <img src="assets/img/vendors_card.webp" alt="Florie Blissful Ballrooms card" width="280" height="312" loading="lazy" decoding="async">
                 </div>
                 <div class="cs_card_icon cs_center">
-                  <img src="assets/img/vendors_2.svg" alt="flower">
+                  <img src="assets/img/vendors_2.svg" alt="Florie Blissful Ballrooms logo" width="180" height="180" loading="lazy" decoding="async">
                 </div>
               </div>
               <div class="cs_card_details text-center">
@@ -178,10 +183,10 @@
             <div class="cs_card_style_2 text-center">
               <div class="cs_card_top position-relative">
                 <div class="cs_card_thumbnail position-absolute">
-                  <img src="assets/img/vendors_card.jpg" alt="Image">
+                  <img src="assets/img/vendors_card.webp" alt="Gardenia Elegant Venue card" width="280" height="312" loading="lazy" decoding="async">
                 </div>
                 <div class="cs_card_icon cs_center">
-                  <img src="assets/img/vector_3.png" alt="flower">
+                  <img src="assets/img/vector_3.webp" alt="Gardenia Elegant Venue logo" width="180" height="180" loading="lazy" decoding="async">
                 </div>
               </div>
               <div class="cs_card_details text-center">
@@ -193,10 +198,10 @@
             <div class="cs_card_style_2 text-center">
               <div class="cs_card_top position-relative">
                 <div class="cs_card_thumbnail position-absolute">
-                  <img src="assets/img/vendors_card.jpg" alt="Image">
+                  <img src="assets/img/vendors_card.webp" alt="Urban Oasis Events card" width="280" height="312" loading="lazy" decoding="async">
                 </div>
                 <div class="cs_card_icon cs_center">
-                  <img src="assets/img/vendors_4.svg" alt="flower">
+                  <img src="assets/img/vendors_4.svg" alt="Urban Oasis Events logo" width="180" height="180" loading="lazy" decoding="async">
                 </div>
               </div>
               <div class="cs_card_details text-center">
@@ -214,7 +219,7 @@
       <div class="container">
         <div class="cs_card_style_7 position-relative">
           <div class="cs_card_thumbnail cs_img_border">
-            <img src="assets/img/work_proces.jpg" alt="work proces">
+            <img src="assets/img/work_process.webp" alt="DreamDay team planning a wedding" width="813" height="312" loading="lazy" decoding="async">
           </div>
           <div class="cs_card_details">
             <h2 class="cs_section_title cs_fs_48 text-uppercase cs_mb_16" data-aos="zoom-in">Our work <span class="cs_bold">Process</span></h2>
@@ -240,51 +245,44 @@
     </section>
     <!-- End Working Process Section -->
     <!-- Start FAQ Section -->
-    <section>
+    <section id="faq">
       <div class="cs_height_120 cs_height_lg_80"></div>
       <div class="container">
         <div class="row cs_gap_y_30">
           <div class="col-lg-5">
-            <div class="cs_accordian_img cs_img_border" data-aos="fade-right">
-              <img src="assets/img/accordian.jpg" alt="accordian image" class="w-100">
+            <div class="cs_accordion_img cs_img_border" data-aos="fade-right">
+              <img src="assets/img/accordion.webp" class="w-100" alt="Wedding planner preparing decorations" width="529" height="560" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="col-lg-7">
-            <div class="cs_accordians_style_1">
+            <div class="cs_accordions_style_1">
               <div class="cs_section_heading_style_1">
                 <h2 class="cs_section_title cs_fs_48 text-uppercase mb-0" data-aos="fade-down">Frequently Asked <span class="cs_bold">Question</span>
                 </h2>
               </div>
               <div class="cs_height_40 cs_height_lg_40"></div>
-              <div class="cs_accordian cs_style_1">
-                <div class="cs_accordian_head cs_fs_16 cs_bold cs_primary_color position-relative">How early should we start planning our wedding?
-                  <span class="cs_accordian_toggler position-absolute"><i class="fa-solid fa-plus"></i></span>
-                </div>
-                <div class="cs_accordian_body cs_fs_16">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
-                </div>
-              </div>
-              <div class="cs_accordian cs_style_1">
-                <div class="cs_accordian_head cs_fs_16 cs_bold cs_primary_color position-relative">
-                  Do you offer customizable wedding packages?
-                  <span class="cs_accordian_toggler position-absolute"><i class="fa-solid fa-plus"></i></span>
-                </div>
-                <div class="cs_accordian_body cs_fs_16">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
+              <div class="cs_accordion cs_style_1">
+                <button type="button" class="cs_accordion_head cs_fs_16 cs_bold cs_primary_color position-relative" id="cs_faq_head_1" aria-expanded="false" aria-controls="cs_faq_body_1">How early should we start planning our wedding?
+                  <span class="cs_accordion_toggler position-absolute" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></button>
+                <div class="cs_accordion_body cs_fs_16" id="cs_faq_body_1">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
                 </div>
               </div>
-              <div class="cs_accordian cs_style_1 active">
-                <div class="cs_accordian_head cs_fs_16 cs_bold cs_primary_color position-relative">
-                  Will you be there on the wedding day to coordinate everything?
-                  <span class="cs_accordian_toggler position-absolute"><i class="fa-solid fa-plus"></i></span>
-                </div>
-                <div class="cs_accordian_body cs_fs_16">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
+              <div class="cs_accordion cs_style_1">
+                <button type="button" class="cs_accordion_head cs_fs_16 cs_bold cs_primary_color position-relative" id="cs_faq_head_2" aria-expanded="false" aria-controls="cs_faq_body_2">Do you offer customizable wedding packages?
+                  <span class="cs_accordion_toggler position-absolute" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></button>
+                <div class="cs_accordion_body cs_fs_16" id="cs_faq_body_2">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
                 </div>
               </div>
-              <div class="cs_accordian cs_style_1">
-                <div class="cs_accordian_head cs_fs_16 cs_bold cs_primary_color position-relative">
-                  Can you help us work within our budget?
-                  <span class="cs_accordian_toggler position-absolute"><i class="fa-solid fa-plus"></i></span>
+              <div class="cs_accordion cs_style_1 active">
+                <button type="button" class="cs_accordion_head cs_fs_16 cs_bold cs_primary_color position-relative" id="cs_faq_head_3" aria-expanded="false" aria-controls="cs_faq_body_3">Will you be there on the wedding day to coordinate everything?
+                  <span class="cs_accordion_toggler position-absolute" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></button>
+                <div class="cs_accordion_body cs_fs_16" id="cs_faq_body_3">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
                 </div>
-                <div class="cs_accordian_body cs_fs_16">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
+              </div>
+              <div class="cs_accordion cs_style_1">
+                <button type="button" class="cs_accordion_head cs_fs_16 cs_bold cs_primary_color position-relative" id="cs_faq_head_4" aria-expanded="false" aria-controls="cs_faq_body_4">Can you help us work within our budget?
+                  <span class="cs_accordion_toggler position-absolute" aria-hidden="true"><i class="fa-solid fa-plus"></i></span></button>
+                <div class="cs_accordion_body cs_fs_16" id="cs_faq_body_4">Our experienced team is adept at troubleshooting. We have plans to address any unforeseen challenges, ensuring a smooth and stress-free celebration.
                 </div>
               </div>
             </div>
@@ -297,16 +295,16 @@
     <div class="cs_height_120 cs_height_lg_80"></div>
     <div class="container">
       <div class="cs_gallery_style_2 cs_lightgallery">
-        <a href="assets/img/service_details_gallery_5.jpg" aria-label="Click to open lightgallery" class="cs_gallery_item cs_img_border cs_bg_filed position-relative" data-src="assets/img/service_details_gallery_5.jpg">
-        <img src="assets/img/service_details_gallery_5.jpg" alt="gallery imgage">
+        <a href="assets/img/service_details_gallery_5.webp" aria-label="Open image in lightbox" class="cs_gallery_item cs_img_border cs_bg_filled position-relative" data-src="assets/img/service_details_gallery_5.webp">
+        <img src="assets/img/service_details_gallery_5.webp" alt="Wedding venue detail" width="312" height="370" loading="lazy" decoding="async">
         <span class="cs_gallery_badge cs_secondary_bg cs_fs_16 cs_bold cs_primary_color">@DREAMDAY</span>
         </a>
-        <a href="assets/img/service_details_gallery_6.jpg" aria-label="Click to open lightgallery" class="cs_gallery_item cs_img_border cs_bg_filed position-relative" data-src="assets/img/service_details_gallery_6.jpg">
-        <img src="assets/img/service_details_gallery_6.jpg" alt="gallery imgage">
+        <a href="assets/img/service_details_gallery_6.webp" aria-label="Open image in lightbox" class="cs_gallery_item cs_img_border cs_bg_filled position-relative" data-src="assets/img/service_details_gallery_6.webp">
+        <img src="assets/img/service_details_gallery_6.webp" alt="Wedding decoration detail" width="280" height="370" loading="lazy" decoding="async">
         <span class="cs_gallery_badge cs_secondary_bg cs_fs_16 cs_bold cs_primary_color">@DREAMDAY</span>
         </a>
-        <a href="assets/img/service_details_gallery_7.jpg" aria-label="Click to open lightgallery" class="cs_gallery_item cs_img_border cs_bg_filed position-relative" data-src="assets/img/service_details_gallery_7.jpg">
-        <img src="assets/img/service_details_gallery_7.jpg" alt="gallery imgage">
+        <a href="assets/img/service_details_gallery_7.webp" aria-label="Open image in lightbox" class="cs_gallery_item cs_img_border cs_bg_filled position-relative" data-src="assets/img/service_details_gallery_7.webp">
+        <img src="assets/img/service_details_gallery_7.webp" alt="Wedding celebration detail" width="530" height="345" loading="lazy" decoding="async">
         <span class="cs_gallery_badge cs_secondary_bg cs_fs_16 cs_bold cs_primary_color">@DREAMDAY</span>
         </a>
       </div>
@@ -323,41 +321,39 @@
             <div class="cs_footer_col">
               <h3 class="cs_footer_widget_title">About</h3>
               <ul class="cs_footer_menu">
-                <li><a href="about.html" aria-label="Footer nav link">About Us</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Our Story</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Testimonials</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Blog</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Faq</a></li>
-                <li><a href="about.html" aria-label="Footer nav link">Careers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html#team">Our Team</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="service-details.html#faq">FAQ</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
               </ul>
             </div>
             <div class="cs_footer_col">
               <h3 class="cs_footer_widget_title">Service</h3>
               <ul class="cs_footer_menu">
-                <li><a href="service-details.html" aria-label="Footer nav link">Venue</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Catering</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Decoration</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Band Music</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Atire & Gowns</a></li>
-                <li><a href="service-details.html" aria-label="Footer nav link">Photo & Video</a></li>
+                <li><a href="service-details.html">Venue</a></li>
+                <li><a href="service-details.html">Catering</a></li>
+                <li><a href="service-details.html">Decoration</a></li>
+                <li><a href="service-details.html">Band Music</a></li>
+                <li><a href="service-details.html">Attire & Gowns</a></li>
+                <li><a href="service-details.html">Photo & Video</a></li>
               </ul>
             </div>
             <div class="cs_footer_col">
               <h3 class="cs_footer_widget_title">Contact</h3>
               <ul class="cs_footer_menu">
-                <li><a href="contact.html" aria-label="Footer nav link">Phone Number</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Email Address</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Our Location</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Social Media</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">User Policy</a></li>
-                <li><a href="contact.html" aria-label="Footer nav link">Client Support</a></li>
+                <li><a href="tel:+15550123456">+1&nbsp;(555)&nbsp;012&#8209;3456</a></li>
+                <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+                <li><a href="contact.html#location">Our Location</a></li>
+                <li><a href="contact.html">Book a Consultation</a></li>
               </ul>
             </div>
             <div class="cs_footer_col">
               <div class="cs_newsletter_style_1">
                 <h2 class="cs_section_title cs_fs_48 mb-0" data-aos="fade-down">LET US BE <span>the one</span> WHO <span>make</span> YOUR WEDDING</h2>
                 <form action="#" class="cs_newsletter_form cs_center p-0">
-                  <input type="email" name="email" placeholder="Enter your email address..." autocomplete="email" required>
+                  <input type="email" name="email" aria-label="Email address" placeholder="Enter your email address..." autocomplete="email" required>
                   <button type="submit" class="cs_btn_style_1 cs_brown" data-aos="zoom-in"><span>Subscribe</span></button>
                 </form>
               </div>
@@ -365,23 +361,21 @@
           </div>
         </div>
         <div class="cs_footer_bottom">
-          <p class="mb-0">Copyright &copy; <span class="cs_getting_year"></span>. All rights reserved.</p>
+          <p class="mb-0">Copyright &copy; <span class="cs_getting_year">2026</span> DreamDay. All rights reserved.</p>
           <ul class="cs_footer_bottom_menu cs_mp_0">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
           </ul>
         </div>
       </div>
     </footer>
     <!-- End Footer Section -->
     <!-- Start Scroll Up Button -->
-    <button type="button" class="cs_scrolltop_btn cs_center rounded-circle">
-    <span><i class="fa-solid fa-chevron-up"></i></span>
+    <button type="button" class="cs_scrolltop_btn cs_center rounded-circle" aria-label="Scroll to top">
+      <span aria-hidden="true"><i class="fa-solid fa-chevron-up"></i></span>
     </button>
     <!-- End Scroll Up Button -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/lightgallery.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
     <script src="assets/js/swiper.min.js"></script>
     <script src="assets/js/lenis.min.js"></script>
     <script src="assets/js/aos.min.js"></script>
